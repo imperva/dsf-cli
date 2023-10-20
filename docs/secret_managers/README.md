@@ -1,5 +1,5 @@
 ## DSF-CLI - Secret Managers:
-Example payloads for Secret Managers [here](https://github.com/imperva/dsf-cli).
+Example payloads for Secret Managers
 
 ### Usage:
 `dsfcli secret_manager -h`

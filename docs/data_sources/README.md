@@ -1,5 +1,5 @@
 ## DSF-CLI - Data Sources:
-Example payloads for data sources [here](https://github.com/imperva/dsf-cli).
+Example payloads for data sources
 
 ### Usage:
 `dsfcli data_sources -h`

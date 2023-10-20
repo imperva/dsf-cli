@@ -1,5 +1,5 @@
 ## DSF-CLI - Cloud Accounts:
-	Example payloads for cloud accounts [here](https://github.com/imperva/dsf-cli).
+Example payloads for cloud accounts
 
 ### Usage:
 `dsfcli cloud_accounts -h`

@@ -1,5 +1,5 @@
 ## DSF-CLI - Log Aggregators:
-Example payloads for Log Aggregators [here](https://github.com/imperva/dsf-cli).
+Example payloads for Log Aggregators
 
 ### Usage:
 `dsfcli log_aggregator -h`
