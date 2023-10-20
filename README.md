@@ -1,4 +1,4 @@
-# Data Security Fabric (DSF) Hub - Command Line Interface (CLI)
+# Data Security Fabric (DSF) Hub CLI
 
 The package provides a simple to use CLI that reflects industry standards (such as the AWS cli), and enables customers to manage DSF configurations and processes via the [DSF Open API](https://docs.imperva.com/bundle/v4.13-sonar-user-guide/page/84552.htm) easily integrating into configurations management, orchestration or automation frameworks to support the DevOps model.
 
