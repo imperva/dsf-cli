@@ -5,6 +5,11 @@ The package provides a simple to use CLI that reflects industry standards (such 
 ## Installation
     pip3 install dsf-cli
 
+## Check out run locally not as pip package
+	git clone git@github.com:imperva/dsf-cli.git
+	cd dsf-cli
+	python3 -m dsfcli -h
+
 ## Running the CLI
 
 This CLI is a Python 3 application and has been tested with Python 3.6 -> 3.8
