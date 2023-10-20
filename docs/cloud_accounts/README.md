@@ -11,19 +11,19 @@ Example payloads for cloud accounts
 `dsfcli cloud_accounts read --id="arn:aws:rds:us-east-2:1234567890:db:your-db-name-here"`
 
 ### Create a cloud_account from input string:
-`python3 -m dsfcli cloud_accounts create --json=''`
+`dsfcli cloud_accounts create --json=''`
 
 ### Create a cloud_account from local file:
-`python3 -m dsfcli cloud_accounts create --json="$(cat < cloud_account_AWS.json)"`
+`dsfcli cloud_accounts create --json="$(cat < cloud_account_AWS.json)"`
 
 ### Upodate a data_source from input string by id:
-`python3 -m dsfcli cloud_accounts update --json='{"data": {"assetData": {"asset_display_name": "your-aws-ec2-iam-role-cloud-asset","arn": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway","asset_id": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway","admin_email": "test@imperva.com","connections": [{"reason": "default","connectionData": {"auth_mechanism": "default","region": "us-east-1",}}]},"serverType": "AWS","gatewayId": "12345-abcde-12345-abcde-12345"}}' --id="arn:aws:iam::658749227924:role/some-role-for-sonar-gateway"`
+`dsfcli cloud_accounts update --json='{"data": {"assetData": {"asset_display_name": "your-aws-ec2-iam-role-cloud-asset","arn": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway","asset_id": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway","admin_email": "test@imperva.com","connections": [{"reason": "default","connectionData": {"auth_mechanism": "default","region": "us-east-1",}}]},"serverType": "AWS","gatewayId": "12345-abcde-12345-abcde-12345"}}' --id="arn:aws:iam::658749227924:role/some-role-for-sonar-gateway"`
 
 ### Upodate a cloud_account from local file by id:
-`python3 -m dsfcli cloud_account update --json="$(cat < cloud_account_AWS.json)" --id="arn:aws:iam::658749227924:role/some-role-for-sonar-gateway"`
+`dsfcli cloud_account update --json="$(cat < cloud_account_AWS.json)" --id="arn:aws:iam::658749227924:role/some-role-for-sonar-gateway"`
 
 ### Delete a cloud_account by id:
-`python3 -m dsfcli cloud_account delete --id="arn:aws:iam::658749227924:role/some-role-for-sonar-gateway"`
+`dsfcli cloud_account delete --id="arn:aws:iam::658749227924:role/some-role-for-sonar-gateway"`
 
 
 #### Config Options ####

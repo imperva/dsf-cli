@@ -11,19 +11,19 @@ Example payloads for Log Aggregators
 `dsfcli log_aggregator read --id=""`
 
 ### Create a log_aggregator from input string:
-`python3 -m dsfcli log_aggregator create --json='{"data": {"assetData": {"asset_display_name": "some-log-group-asset","arn": "arn:aws:logs:us-east-1:1234567890:log-group:/aws/rds/instance/my-database/audit:*","admin_email": "test@imperva.com","parent_asset_id": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2","connections": [{"reason": "default","connectionData": {"auth_mechanism": "default","region": "us-east-1"}}]},"serverType": "AWS LOG GROUP","parentAssetId": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2","gatewayId": "60343559-211f-4d8a-9477-8042720bae58"}}'`
+`dsfcli log_aggregator create --json='{"data": {"assetData": {"asset_display_name": "some-log-group-asset","arn": "arn:aws:logs:us-east-1:1234567890:log-group:/aws/rds/instance/my-database/audit:*","admin_email": "test@imperva.com","parent_asset_id": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2","connections": [{"reason": "default","connectionData": {"auth_mechanism": "default","region": "us-east-1"}}]},"serverType": "AWS LOG GROUP","parentAssetId": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2","gatewayId": "60343559-211f-4d8a-9477-8042720bae58"}}'`
 
 ### Create a log_aggregator from local file:
-`python3 -m dsfcli log_aggregator create --json="$(cat < log_aggregator_AWS.json)"`
+`dsfcli log_aggregator create --json="$(cat < log_aggregator_AWS.json)"`
 
 ### Upodate a data_source from input string by id:
-`python3 -m dsfcli log_aggregator update --json='{"data": {"assetData": {"asset_display_name": "some-log-group-asset","arn": "arn:aws:logs:us-east-1:1234567890:log-group:/aws/rds/instance/my-database/audit:*","admin_email": "test@imperva.com","parent_asset_id": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2","connections": [{"reason": "default","connectionData": {"auth_mechanism": "default","region": "us-east-1"}}]},"serverType": "AWS LOG GROUP","parentAssetId": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2","gatewayId": "60343559-211f-4d8a-9477-8042720bae58"}}' --id="arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2"`
+`dsfcli log_aggregator update --json='{"data": {"assetData": {"asset_display_name": "some-log-group-asset","arn": "arn:aws:logs:us-east-1:1234567890:log-group:/aws/rds/instance/my-database/audit:*","admin_email": "test@imperva.com","parent_asset_id": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2","connections": [{"reason": "default","connectionData": {"auth_mechanism": "default","region": "us-east-1"}}]},"serverType": "AWS LOG GROUP","parentAssetId": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2","gatewayId": "60343559-211f-4d8a-9477-8042720bae58"}}' --id="arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2"`
 
 ### Upodate a log_aggregator from local file by id:
-`python3 -m dsfcli log_aggregator update --json="$(cat < log_aggregator_AWS.json)" --id="arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2"`
+`dsfcli log_aggregator update --json="$(cat < log_aggregator_AWS.json)" --id="arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2"`
 
 ### Delete a log_aggregator by id:
-`python3 -m dsfcli log_aggregator delete --id="arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2"`
+`dsfcli log_aggregator delete --id="arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2"`
 
 #### Config Options ####
 

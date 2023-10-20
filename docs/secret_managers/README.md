@@ -11,19 +11,19 @@ Example payloads for Secret Managers
 `dsfcli secret_manager read --id="my.hashicorp.vault.server.com"`
 
 ### Create a secret_manager from input string:
-`python3 -m dsfcli secret_manager create --json='{"data": {"assetData": {"asset_display_name": "some-hashicorp-vault-server","asset_id": "my.hashicorp.vault.server.com","Server Host Name": "my.hashicorp.vault.server.com","Server IP": "1.2.3.4","Server Port": "8200","admin_email": "ba@imperva.com","connections": [{"reason": "default","connectionData": {"auth_mechanism": "ec2","role_name": "vault-role-for-ec2"}}]},"serverType": "HASHICORP","parentAssetId": "","gatewayId": "e33bfbe4-a93a-c4e5-8e9c-6e5558c2e2cd"}}'`
+`dsfcli secret_manager create --json='{"data": {"assetData": {"asset_display_name": "some-hashicorp-vault-server","asset_id": "my.hashicorp.vault.server.com","Server Host Name": "my.hashicorp.vault.server.com","Server IP": "1.2.3.4","Server Port": "8200","admin_email": "ba@imperva.com","connections": [{"reason": "default","connectionData": {"auth_mechanism": "ec2","role_name": "vault-role-for-ec2"}}]},"serverType": "HASHICORP","parentAssetId": "","gatewayId": "e33bfbe4-a93a-c4e5-8e9c-6e5558c2e2cd"}}'`
 
 ### Create a secret_manager from local file:
-`python3 -m dsfcli secret_manager create --json="$(cat < secret_manager_AWS.json)"`
+`dsfcli secret_manager create --json="$(cat < secret_manager_AWS.json)"`
 
 ### Upodate a data_source from input string by id:
-`python3 -m dsfcli secret_manager update --json='{"data": {"assetData": {"asset_display_name": "some-hashicorp-vault-server","asset_id": "my.hashicorp.vault.server.com","Server Host Name": "my.hashicorp.vault.server.com","Server IP": "1.2.3.4","Server Port": "8200","admin_email": "ba@imperva.com","connections": [{"reason": "default","connectionData": {"auth_mechanism": "ec2","role_name": "vault-role-for-ec2"}}]},"serverType": "HASHICORP","parentAssetId": "","gatewayId": "e33bfbe4-a93a-c4e5-8e9c-6e5558c2e2cd"}}' --id="my.hashicorp.vault.server.com"`
+`dsfcli secret_manager update --json='{"data": {"assetData": {"asset_display_name": "some-hashicorp-vault-server","asset_id": "my.hashicorp.vault.server.com","Server Host Name": "my.hashicorp.vault.server.com","Server IP": "1.2.3.4","Server Port": "8200","admin_email": "ba@imperva.com","connections": [{"reason": "default","connectionData": {"auth_mechanism": "ec2","role_name": "vault-role-for-ec2"}}]},"serverType": "HASHICORP","parentAssetId": "","gatewayId": "e33bfbe4-a93a-c4e5-8e9c-6e5558c2e2cd"}}' --id="my.hashicorp.vault.server.com"`
 
 ### Upodate a secret_manager from local file by id:
-`python3 -m dsfcli secret_manager update --json="$(cat < secret_manager_AWS.json)" --id="my.hashicorp.vault.server.com"`
+`dsfcli secret_manager update --json="$(cat < secret_manager_AWS.json)" --id="my.hashicorp.vault.server.com"`
 
 ### Delete a secret_manager by id:
-`python3 -m dsfcli secret_manager delete --id="my.hashicorp.vault.server.com"`
+`dsfcli secret_manager delete --id="my.hashicorp.vault.server.com"`
 
 #### Config Options ####
 
