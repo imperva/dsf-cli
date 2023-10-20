@@ -19,7 +19,7 @@ DSF_DEBUG = bool(os.getenv("IMPV_DSF_DEBUG", False))
 configuration = Configuration()
 configuration.verify_ssl = False
 configuration.api_key["Authorization"] = "Bearer {}".format(DSF_TOKEN)
-configuration.host = DSF_HOST
+configuration.host = "{}/dsf".format(DSF_HOST)
 configuration.debug = DSF_DEBUG
 
 parser = argparse.ArgumentParser(prog='dsfcli',
