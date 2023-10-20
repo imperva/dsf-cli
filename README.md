@@ -42,7 +42,7 @@ This CLI is a Python 3 application and has been tested with Python 3.6 -> 3.8
 https://www.python.org/downloads/
 
 Examples by resource type:
-1. [Cloud Accounts](https://github.com/imperva/dsf-cli)
-1. [Data Sources](https://github.com/imperva/dsf-cli)
-1. [Log Aggregators](https://github.com/imperva/dsf-cli)
-1. [Secret Managers](https://github.com/imperva/dsf-cli)
+1. [Cloud Accounts](https://github.com/imperva/dsf-cli/tree/main/docs/cloud_accounts)
+1. [Data Sources](https://github.com/imperva/data_sources)
+1. [Log Aggregators](https://github.com/imperva/log_aggregators)
+1. [Secret Managers](https://github.com/imperva/secret_managers)
