@@ -12,7 +12,7 @@ def data_source_parse(subparsers):
 
     data_source_create_parser = data_source_subparsers.add_parser('create', help='Create a new data source.',
                                                                   usage='dsfcli [options] data_source get data_source_id')
-    data_source_create_parser.add_argument('--json', help='The JSON object to POST.')
+    data_source_create_parser.add_argument('json', help='The JSON object to POST.')
     data_source_create_parser.add_argument('--sync_type', default='', help='Determines whether to sync this operation with the gateways. '
                                                                            '\"Blocking\" here means the request will wait for the sync operation'
                                                                            ' to complete before getting a response from the server. '
@@ -26,8 +26,8 @@ def data_source_parse(subparsers):
 
     data_source_update_parser = data_source_subparsers.add_parser('update', help='Update an existing data source by id.',
                                                                   usage='dsfcli [options] data_source get data_source_id')
-    data_source_update_parser.add_argument('--id', help='The data_source ID.')
-    data_source_update_parser.add_argument('--json', help='The JSON object to PUT.')
+    data_source_update_parser.add_argument('id', help='The data_source ID.')
+    data_source_update_parser.add_argument('json', help='The JSON object to PUT.')
     data_source_update_parser.add_argument('--sync_type', default='', help='Determines whether to sync this operation with the gateways. '
                                                                            '\"Blocking\" here means the request will wait for the sync operation'
                                                                            ' to complete before getting a response from the server. '
@@ -36,7 +36,7 @@ def data_source_parse(subparsers):
 
     data_source_delete_parser = data_source_subparsers.add_parser('delete', help='Delete data source by id.',
                                                                   usage='dsfcli [options] data_source delete data_source_id')
-    data_source_delete_parser.add_argument('--id', help='The data_source ID.')
+    data_source_delete_parser.add_argument('id', help='The data_source ID.')
     data_source_delete_parser.set_defaults(func=delete)
 
 

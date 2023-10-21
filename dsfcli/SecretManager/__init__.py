@@ -12,7 +12,7 @@ def secret_manager_parse(subparsers):
 
     secret_manager_create_parser = secret_manager_subparsers.add_parser('create', help='Create a new secret manager.',
                                                                   usage='dsfcli [options] secret_manager get secret_manager_id')
-    secret_manager_create_parser.add_argument('--json', help='The JSON object to POST.')
+    secret_manager_create_parser.add_argument('json', help='The JSON object to POST.')
     secret_manager_create_parser.add_argument('--sync_type', default='', help='Determines whether to sync this operation with the gateways. '
                                                                            '\"Blocking\" here means the request will wait for the sync operation'
                                                                            ' to complete before getting a response from the server. '
@@ -26,8 +26,8 @@ def secret_manager_parse(subparsers):
 
     secret_manager_update_parser = secret_manager_subparsers.add_parser('update', help='Update an existing secret manager by id.',
                                                                   usage='dsfcli [options] secret_manager get secret_manager_id')
-    secret_manager_update_parser.add_argument('--id', help='The secret_manager ID.')
-    secret_manager_update_parser.add_argument('--json', help='The JSON object to PUT.')
+    secret_manager_update_parser.add_argument('id', help='The secret_manager ID.')
+    secret_manager_update_parser.add_argument('json', help='The JSON object to PUT.')
     secret_manager_update_parser.add_argument('--sync_type', default='', help='Determines whether to sync this operation with the gateways. '
                                                                            '\"Blocking\" here means the request will wait for the sync operation'
                                                                            ' to complete before getting a response from the server. '
@@ -36,7 +36,7 @@ def secret_manager_parse(subparsers):
 
     secret_manager_delete_parser = secret_manager_subparsers.add_parser('delete', help='Delete secret manager by id..',
                                                                   usage='dsfcli [options] secret_manager delete secret_manager_id')
-    secret_manager_delete_parser.add_argument('--id', help='The secret_manager ID.')
+    secret_manager_delete_parser.add_argument('id', help='The secret_manager ID.')
     secret_manager_delete_parser.set_defaults(func=delete)
 
 

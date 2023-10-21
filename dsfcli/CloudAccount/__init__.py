@@ -26,8 +26,8 @@ def cloud_account_parse(subparsers):
 
     cloud_account_update_parser = cloud_account_subparsers.add_parser('update', help='Update an existing cloud account by id.',
                                                                   usage='dsfcli [options] cloud_account get cloud_account_id')
-    cloud_account_update_parser.add_argument('--id', help='The cloud_account ID.')
-    cloud_account_update_parser.add_argument('--json', help='The JSON object to PUT.')
+    cloud_account_update_parser.add_argument('id', help='The cloud_account ID.')
+    cloud_account_update_parser.add_argument('json', help='The JSON object to PUT.')
     cloud_account_update_parser.add_argument('--sync_type', default='', help='Determines whether to sync this operation with the gateways. '
                                                                            '\"Blocking\" here means the request will wait for the sync operation'
                                                                            ' to complete before getting a response from the server. '
@@ -36,7 +36,7 @@ def cloud_account_parse(subparsers):
 
     cloud_account_delete_parser = cloud_account_subparsers.add_parser('delete', help='Delete cloud account by id.',
                                                                   usage='dsfcli [options] cloud_account delete cloud_account_id')
-    cloud_account_delete_parser.add_argument('--id', help='The cloud_account ID.')
+    cloud_account_delete_parser.add_argument('id', help='The cloud_account ID.')
     cloud_account_delete_parser.set_defaults(func=delete)
 
 

@@ -12,7 +12,7 @@ def general_assets_parse(subparsers):
 
     general_assets_create_parser = general_assets_subparsers.add_parser('create', help='Create a new general assets.',
                                                                   usage='dsfcli [options] general_assets get general_assets_id')
-    general_assets_create_parser.add_argument('--json', help='The JSON object to POST.')
+    general_assets_create_parser.add_argument('json', help='The JSON object to POST.')
     general_assets_create_parser.add_argument('--sync_type', default='', help='Determines whether to sync this operation with the gateways. '
                                                                            '\"Blocking\" here means the request will wait for the sync operation'
                                                                            ' to complete before getting a response from the server. '
@@ -26,8 +26,8 @@ def general_assets_parse(subparsers):
 
     general_assets_update_parser = general_assets_subparsers.add_parser('update', help='Update an existing general assets by id.',
                                                                   usage='dsfcli [options] general_assets get general_assets_id')
-    general_assets_update_parser.add_argument('--id', help='The general_assets ID.')
-    general_assets_update_parser.add_argument('--json', help='The JSON object to PUT.')
+    general_assets_update_parser.add_argument('id', help='The general_assets ID.')
+    general_assets_update_parser.add_argument('json', help='The JSON object to PUT.')
     general_assets_update_parser.add_argument('--sync_type', default='', help='Determines whether to sync this operation with the gateways. '
                                                                            '\"Blocking\" here means the request will wait for the sync operation'
                                                                            ' to complete before getting a response from the server. '
@@ -36,7 +36,7 @@ def general_assets_parse(subparsers):
 
     general_assets_delete_parser = general_assets_subparsers.add_parser('delete', help='Delete general assets by id.',
                                                                   usage='dsfcli [options] general_assets delete general_assets_id')
-    general_assets_delete_parser.add_argument('--id', help='The general_assets ID.')
+    general_assets_delete_parser.add_argument('id', help='The general_assets ID.')
     general_assets_delete_parser.set_defaults(func=delete)
 
 

@@ -12,7 +12,7 @@ def log_aggregator_parse(subparsers):
 
     log_aggregator_create_parser = log_aggregator_subparsers.add_parser('create', help='Create a new log aggregator.',
                                                                   usage='dsfcli [options] log_aggregator get log_aggregator_id')
-    log_aggregator_create_parser.add_argument('--json', help='The JSON object to POST.')
+    log_aggregator_create_parser.add_argument('json', help='The JSON object to POST.')
     log_aggregator_create_parser.add_argument('--sync_type', default='', help='Determines whether to sync this operation with the gateways. '
                                                                            '\"Blocking\" here means the request will wait for the sync operation'
                                                                            ' to complete before getting a response from the server. '
@@ -26,8 +26,8 @@ def log_aggregator_parse(subparsers):
 
     log_aggregator_update_parser = log_aggregator_subparsers.add_parser('update', help='Update an existing log aggregator by id.',
                                                                   usage='dsfcli [options] log_aggregator get log_aggregator_id')
-    log_aggregator_update_parser.add_argument('--id', help='The log_aggregator ID.')
-    log_aggregator_update_parser.add_argument('--json', help='The JSON object to PUT.')
+    log_aggregator_update_parser.add_argument('id', help='The log_aggregator ID.')
+    log_aggregator_update_parser.add_argument('json', help='The JSON object to PUT.')
     log_aggregator_update_parser.add_argument('--sync_type', default='', help='Determines whether to sync this operation with the gateways. '
                                                                            '\"Blocking\" here means the request will wait for the sync operation'
                                                                            ' to complete before getting a response from the server. '
@@ -36,7 +36,7 @@ def log_aggregator_parse(subparsers):
 
     log_aggregator_delete_parser = log_aggregator_subparsers.add_parser('delete', help='Delete log aggregator by id.',
                                                                   usage='dsfcli [options] log_aggregator delete log_aggregator_id')
-    log_aggregator_delete_parser.add_argument('--id', help='The log_aggregator ID.')
+    log_aggregator_delete_parser.add_argument('id', help='The log_aggregator ID.')
     log_aggregator_delete_parser.set_defaults(func=delete)
 
 
