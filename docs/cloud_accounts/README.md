@@ -16,10 +16,10 @@ Example payloads for cloud accounts
 ### Create a cloud_account from local file:
 `dsfcli cloud_accounts create --json="$(cat < cloud_account_AWS.json)"`
 
-### Upodate a data_source from input string by id:
+### Update a data_source from input string by id:
 `dsfcli cloud_accounts update --json='{"data": {"assetData": {"asset_display_name": "your-aws-ec2-iam-role-cloud-asset","arn": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway","asset_id": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway","admin_email": "test@imperva.com","connections": [{"reason": "default","connectionData": {"auth_mechanism": "default","region": "us-east-1",}}]},"serverType": "AWS","gatewayId": "12345-abcde-12345-abcde-12345"}}' --id="arn:aws:iam::658749227924:role/some-role-for-sonar-gateway"`
 
-### Upodate a cloud_account from local file by id:
+### Update a cloud_account from local file by id:
 `dsfcli cloud_account update --json="$(cat < cloud_account_AWS.json)" --id="arn:aws:iam::658749227924:role/some-role-for-sonar-gateway"`
 
 ### Delete a cloud_account by id:
