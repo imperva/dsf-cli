@@ -8,22 +8,22 @@ Example payloads for Log Aggregators
 `dsfcli log_aggregator read`
 
 ### Retrieve a specific log_aggregator by id:
-`dsfcli log_aggregator read --id=""`
+`dsfcli log_aggregator read '{"data": {"assetData": {"asset_display_name": "some-log-group-asset","arn": "arn:aws:logs:us-east-1:1234567890:log-group:/aws/rds/instance/my-database/audit:*","admin_email": "test@imperva.com","parent_asset_id": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2","connections": [{"reason": "default","connectionData": {"auth_mechanism": "default","region": "us-east-1"}}]},"serverType": "AWS LOG GROUP","parentAssetId": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2","gatewayId": "60343559-211f-4d8a-9477-8042720bae58"}}'`
 
 ### Create a log_aggregator from input string:
-`dsfcli log_aggregator create --json='{"data": {"assetData": {"asset_display_name": "some-log-group-asset","arn": "arn:aws:logs:us-east-1:1234567890:log-group:/aws/rds/instance/my-database/audit:*","admin_email": "test@imperva.com","parent_asset_id": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2","connections": [{"reason": "default","connectionData": {"auth_mechanism": "default","region": "us-east-1"}}]},"serverType": "AWS LOG GROUP","parentAssetId": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2","gatewayId": "60343559-211f-4d8a-9477-8042720bae58"}}'`
+`dsfcli log_aggregator create '{"data": {"assetData": {"asset_display_name": "some-log-group-asset","arn": "arn:aws:logs:us-east-1:1234567890:log-group:/aws/rds/instance/my-database/audit:*","admin_email": "test@imperva.com","parent_asset_id": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2","connections": [{"reason": "default","connectionData": {"auth_mechanism": "default","region": "us-east-1"}}]},"serverType": "AWS LOG GROUP","parentAssetId": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2","gatewayId": "60343559-211f-4d8a-9477-8042720bae58"}}'`
 
 ### Create a log_aggregator from local file:
-`dsfcli log_aggregator create --json="$(cat < log_aggregator_AWS.json)"`
+`dsfcli log_aggregator create "$(cat < log_aggregator_AWS.json)"`
 
 ### Update a data_source from input string by id:
-`dsfcli log_aggregator update --json='{"data": {"assetData": {"asset_display_name": "some-log-group-asset","arn": "arn:aws:logs:us-east-1:1234567890:log-group:/aws/rds/instance/my-database/audit:*","admin_email": "test@imperva.com","parent_asset_id": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2","connections": [{"reason": "default","connectionData": {"auth_mechanism": "default","region": "us-east-1"}}]},"serverType": "AWS LOG GROUP","parentAssetId": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2","gatewayId": "60343559-211f-4d8a-9477-8042720bae58"}}' --id="arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2"`
+`dsfcli log_aggregator update "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2" '{"data": {"assetData": {"asset_display_name": "some-log-group-asset","arn": "arn:aws:logs:us-east-1:1234567890:log-group:/aws/rds/instance/my-database/audit:*","admin_email": "test@imperva.com","parent_asset_id": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2","connections": [{"reason": "default","connectionData": {"auth_mechanism": "default","region": "us-east-1"}}]},"serverType": "AWS LOG GROUP","parentAssetId": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2","gatewayId": "60343559-211f-4d8a-9477-8042720bae58"}}'`
 
 ### Update a log_aggregator from local file by id:
-`dsfcli log_aggregator update --json="$(cat < log_aggregator_AWS.json)" --id="arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2"`
+`dsfcli log_aggregator update "$(cat < log_aggregator_AWS.json)" "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2"`
 
 ### Delete a log_aggregator by id:
-`dsfcli log_aggregator delete --id="arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2"`
+`dsfcli log_aggregator delete "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2"`
 
 #### Config Options ####
 
