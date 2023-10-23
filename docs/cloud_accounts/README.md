@@ -1,5 +1,5 @@
 ## DSF-CLI - Cloud Accounts:
-[CLick here](https://github.com/imperva/dsf-cli/tree/main/docs/cloud_accounts/examples) for example payloads for optional and required fields for all cloud account types.
+[Click here](https://github.com/imperva/dsf-cli/tree/main/docs/cloud_accounts/examples) for example payloads for optional and required fields for all cloud account types.
 
 ### Usage:
 `dsfcli cloud_account -h`

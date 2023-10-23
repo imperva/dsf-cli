@@ -1,5 +1,5 @@
 ## DSF-CLI - Log Aggregators:
-[CLick here](https://github.com/imperva/dsf-cli/tree/main/docs/log_aggregators/examples) for example payloads for optional and required fields for all log aggregator types.
+[Click here](https://github.com/imperva/dsf-cli/tree/main/docs/log_aggregators/examples) for example payloads for optional and required fields for all log aggregator types.
 
 ### Usage:
 `dsfcli log_aggregator -h`

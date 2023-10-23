@@ -1,6 +1,6 @@
 ## DSF-CLI - Secret Managers:
 Example payloads for Secret Managers
-[CLick here](https://github.com/imperva/dsf-cli/tree/main/docs/secrets_managers/examples) for example payloads for optional and required fields for all secret manager types.
+[Click here](https://github.com/imperva/dsf-cli/tree/main/docs/secrets_managers/examples) for example payloads for optional and required fields for all secret manager types.
 
 ### Usage:
 `dsfcli secret_manager -h`
