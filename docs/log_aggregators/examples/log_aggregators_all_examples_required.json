@@ -1,0 +1,161 @@
+{
+    "ALIBABA LOGSTORE": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {},
+                        "reason": "string"
+                    }
+                ],
+                "endpoint": "string",
+                "logstore": "string",
+                "parent_asset_id": "string",
+                "project": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "AWS KINESIS": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "arn": "string",
+                "asset_display_name": "string",
+                "connections": [
+                    {
+                        "connectionData": {
+                            "region": "string"
+                        },
+                        "reason": "string"
+                    }
+                ]
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "AWS LOG GROUP": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "arn": "string",
+                "asset_display_name": "string",
+                "connections": [
+                    {
+                        "connectionData": {
+                            "region": "string"
+                        },
+                        "reason": "string"
+                    }
+                ],
+                "parent_asset_id": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "AWS S3": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "arn": "string",
+                "asset_display_name": "string",
+                "connections": [
+                    {
+                        "connectionData": {},
+                        "reason": "string"
+                    }
+                ],
+                "server_host_name": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "AZURE EVENTHUB": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {},
+                        "reason": "string"
+                    }
+                ],
+                "server_host_name": "string",
+                "server_port": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "GCP CLOUD STORAGE BUCKET": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {
+                            "key_file": "string"
+                        },
+                        "reason": "string"
+                    }
+                ],
+                "server_host_name": "string",
+                "server_port": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "GCP PUBSUB": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {
+                            "key_file": "string"
+                        },
+                        "reason": "string"
+                    }
+                ],
+                "pubsub_subscription": "string",
+                "server_host_name": "string",
+                "server_port": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "SSH": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {},
+                        "reason": "string"
+                    }
+                ],
+                "server_host_name": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "log_aggregators": {}
+}

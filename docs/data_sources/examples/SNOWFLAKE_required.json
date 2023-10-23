@@ -1,0 +1,33 @@
+{
+    "data": {
+        "assetData": {
+            "admin_email": "string",
+            "asset_display_name": "string",
+            "asset_id": "string",
+            "connections": [
+                {
+                    "connectionData": {
+                        "access_id": "string",
+                        "client_id": "string",
+                        "client_secret": "string",
+                        "oauth_parameters": {
+                            "parameter": "value"
+                        },
+                        "password": "string",
+                        "principal": "string",
+                        "resource_id": "string",
+                        "snowflake_role": "string",
+                        "tenant_id": "string",
+                        "token": "string",
+                        "token_endpoint": "string",
+                        "username": "string"
+                    },
+                    "reason": "string"
+                }
+            ],
+            "server_host_name": "string"
+        },
+        "asset_id": "string",
+        "gateway_id": "string"
+    }
+}

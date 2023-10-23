@@ -1,0 +1,27 @@
+{
+    "data": {
+        "assetData": {
+            "admin_email": "string",
+            "asset_display_name": "string",
+            "asset_id": "string",
+            "connections": [
+                {
+                    "connectionData": {
+                        "account_name": "string",
+                        "api_key": "string",
+                        "crn": "string",
+                        "password": "string",
+                        "region": "string",
+                        "service_key": "string",
+                        "username": "string"
+                    },
+                    "reason": "string"
+                }
+            ],
+            "server_host_name": "string",
+            "server_port": "string"
+        },
+        "asset_id": "string",
+        "gateway_id": "string"
+    }
+}

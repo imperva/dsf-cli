@@ -1,0 +1,23 @@
+{
+    "data": {
+        "assetData": {
+            "admin_email": "string",
+            "arn": "string",
+            "asset_display_name": "string",
+            "asset_id": "string",
+            "connections": [
+                {
+                    "connectionData": {
+                        "access_id": "string",
+                        "secret_key": "string",
+                        "username": "string"
+                    },
+                    "reason": "string"
+                }
+            ],
+            "region": "string"
+        },
+        "asset_id": "string",
+        "gateway_id": "string"
+    }
+}

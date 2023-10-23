@@ -1,0 +1,61 @@
+{
+    "data": {
+        "assetData": {
+            "admin_email": "string",
+            "asset_display_name": "string",
+            "asset_id": "string",
+            "asset_source": "string",
+            "audit_info": {
+                "policy_template_name": "<template name>"
+            },
+            "audit_pull_enabled": true,
+            "audit_type": "COSMOS_TABLE",
+            "connections": [
+                {
+                    "connectionData": {
+                        "amazon_secret": {
+                            "field_mapping": {
+                                "<local_field1>": "<remote_field1>",
+                                "<local_field2>": "<remote_field2>"
+                            },
+                            "secret_asset_id": "<AWS_asset_id>",
+                            "secret_name": "<secret_name>"
+                        },
+                        "hashicorp_secret": {
+                            "field_mapping": {
+                                "<local_field1>": "<remote_field1>",
+                                "<local_field2>": "<remote_field2>"
+                            },
+                            "path": "secret/",
+                            "secret_asset_id": "<hashicorp_asset_id>",
+                            "secret_name": "<secret_name>"
+                        },
+                        "ssl": true
+                    },
+                    "reason": "string"
+                }
+            ],
+            "consumer_group": "string",
+            "content_type": "string",
+            "criticality": 1,
+            "database_name": "string",
+            "db_engine": "string",
+            "enable_audit_management": true,
+            "enable_audit_monitoring": true,
+            "entitlement_enabled": true,
+            "gateway_service": "string",
+            "jsonar_uid": "string",
+            "location": "string",
+            "managed_by": "string",
+            "owned_by": "string",
+            "parent_asset_id": "string",
+            "region": "string",
+            "server_host_name": "string",
+            "server_port": "string",
+            "used_for": "Production",
+            "version": "string"
+        },
+        "asset_id": "string",
+        "gateway_id": "string"
+    }
+}

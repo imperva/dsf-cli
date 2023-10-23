@@ -1,0 +1,34 @@
+{
+    "data": {
+        "assetData": {
+            "admin_email": "string",
+            "asset_display_name": "string",
+            "asset_id": "string",
+            "asset_source": "string",
+            "connections": [
+                {
+                    "connectionData": {
+                        "ca_certs_path": "string",
+                        "cert_file": "string",
+                        "key_file": "string",
+                        "self_signed": true,
+                        "ssl": true
+                    },
+                    "reason": "string"
+                }
+            ],
+            "criticality": 1,
+            "jsonar_uid": "string",
+            "location": "string",
+            "managed_by": "string",
+            "owned_by": "string",
+            "region": "string",
+            "server_host_name": "string",
+            "server_port": "string",
+            "used_for": "Production",
+            "version": "string"
+        },
+        "asset_id": "string",
+        "gateway_id": "string"
+    }
+}

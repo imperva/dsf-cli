@@ -1,0 +1,21 @@
+{
+    "data": {
+        "assetData": {
+            "admin_email": "string",
+            "asset_display_name": "string",
+            "asset_id": "string",
+            "connections": [
+                {
+                    "connectionData": {},
+                    "reason": "string"
+                }
+            ],
+            "endpoint": "string",
+            "logstore": "string",
+            "parent_asset_id": "string",
+            "project": "string"
+        },
+        "asset_id": "string",
+        "gateway_id": "string"
+    }
+}

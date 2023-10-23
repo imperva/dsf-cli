@@ -1,0 +1,70 @@
+{
+    "data": {
+        "assetData": {
+            "admin_email": "string",
+            "asset_display_name": "string",
+            "asset_id": "string",
+            "asset_source": "string",
+            "connections": [
+                {
+                    "connectionData": {
+                        "amazon_secret": {
+                            "field_mapping": {
+                                "<local_field1>": "<remote_field1>",
+                                "<local_field2>": "<remote_field2>"
+                            },
+                            "secret_asset_id": "<AWS_asset_id>",
+                            "secret_name": "<secret_name>"
+                        },
+                        "cache_file": "string",
+                        "db_role": "string",
+                        "external": true,
+                        "extra_kinit_parameters": "string",
+                        "hashicorp_secret": {
+                            "field_mapping": {
+                                "<local_field1>": "<remote_field1>",
+                                "<local_field2>": "<remote_field2>"
+                            },
+                            "path": "secret/",
+                            "secret_asset_id": "<hashicorp_asset_id>",
+                            "secret_name": "<secret_name>"
+                        },
+                        "kerberos_kdc": "string",
+                        "kerberos_service_kdc": "string",
+                        "kerberos_service_realm": "string",
+                        "kerberos_spn": "string",
+                        "keytab_file": "string",
+                        "kinit_program_path": "string",
+                        "password": "string",
+                        "principal": "string",
+                        "proxy_auto_detect": "string",
+                        "proxy_password": "string",
+                        "proxy_port": "string",
+                        "proxy_server": "string",
+                        "proxy_ssl_type": "string",
+                        "ssl": true,
+                        "ssl_server_cert": "string",
+                        "use_keytab": true,
+                        "username": "string"
+                    },
+                    "reason": "string"
+                }
+            ],
+            "content_type": "string",
+            "criticality": 1,
+            "database_name": "string",
+            "jsonar_uid": "string",
+            "location": "string",
+            "managed_by": "string",
+            "owned_by": "string",
+            "parent_asset_id": "string",
+            "region": "string",
+            "server_host_name": "string",
+            "server_port": "string",
+            "used_for": "Production",
+            "version": "string"
+        },
+        "asset_id": "string",
+        "gateway_id": "string"
+    }
+}

@@ -1,0 +1,58 @@
+{
+    "data": {
+        "assetData": {
+            "admin_email": "string",
+            "asset_display_name": "string",
+            "asset_id": "string",
+            "asset_source": "string",
+            "audit_data_type": "string",
+            "audit_pull_enabled": true,
+            "audit_type": "LOGSTORE",
+            "connections": [
+                {
+                    "connectionData": {
+                        "amazon_secret": {
+                            "field_mapping": {
+                                "<local_field1>": "<remote_field1>",
+                                "<local_field2>": "<remote_field2>"
+                            },
+                            "secret_asset_id": "<AWS_asset_id>",
+                            "secret_name": "<secret_name>"
+                        },
+                        "hashicorp_secret": {
+                            "field_mapping": {
+                                "<local_field1>": "<remote_field1>",
+                                "<local_field2>": "<remote_field2>"
+                            },
+                            "path": "secret/",
+                            "secret_asset_id": "<hashicorp_asset_id>",
+                            "secret_name": "<secret_name>"
+                        },
+                        "ssl": true
+                    },
+                    "reason": "string"
+                }
+            ],
+            "consumer_group_workers": "string",
+            "content_type": "string",
+            "criticality": 1,
+            "enable_audit_management": true,
+            "enable_audit_monitoring": true,
+            "endpoint": "string",
+            "entitlement_enabled": true,
+            "jsonar_uid": "string",
+            "logstore": "string",
+            "managed_by": "string",
+            "owned_by": "string",
+            "parent_asset_id": "string",
+            "project": "string",
+            "pull_type": "string",
+            "region": "string",
+            "sdm_enabled": true,
+            "server_port": "string",
+            "used_for": "Production"
+        },
+        "asset_id": "string",
+        "gateway_id": "string"
+    }
+}

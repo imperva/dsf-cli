@@ -1,0 +1,46 @@
+{
+    "data": {
+        "assetData": {
+            "admin_email": "string",
+            "asset_display_name": "string",
+            "asset_id": "string",
+            "asset_source": "string",
+            "connections": [
+                {
+                    "connectionData": {
+                        "amazon_secret": {
+                            "field_mapping": {
+                                "<local_field1>": "<remote_field1>",
+                                "<local_field2>": "<remote_field2>"
+                            },
+                            "secret_asset_id": "<AWS_asset_id>",
+                            "secret_name": "<secret_name>"
+                        },
+                        "hashicorp_secret": {
+                            "field_mapping": {
+                                "<local_field1>": "<remote_field1>",
+                                "<local_field2>": "<remote_field2>"
+                            },
+                            "path": "secret/",
+                            "secret_asset_id": "<hashicorp_asset_id>",
+                            "secret_name": "<secret_name>"
+                        },
+                        "key_file": "string",
+                        "ssl": true
+                    },
+                    "reason": "string"
+                }
+            ],
+            "criticality": 1,
+            "jsonar_uid": "string",
+            "location": "string",
+            "managed_by": "string",
+            "owned_by": "string",
+            "region": "string",
+            "server_host_name": "string",
+            "used_for": "Production"
+        },
+        "asset_id": "string",
+        "gateway_id": "string"
+    }
+}

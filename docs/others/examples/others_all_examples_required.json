@@ -1,0 +1,567 @@
+{
+    "AWS SQS": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "arn": "string",
+                "asset_display_name": "string",
+                "connections": [
+                    {
+                        "connectionData": {},
+                        "reason": "string"
+                    }
+                ]
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "AZURE DATABRICKS WORKSPACE": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {},
+                        "reason": "string"
+                    }
+                ],
+                "server_host_name": "string",
+                "server_port": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "AZURE SYNAPSE ANALYTICS": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {},
+                        "reason": "string"
+                    }
+                ],
+                "server_host_name": "string",
+                "server_port": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "GENERIC": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {},
+                        "reason": "string"
+                    }
+                ],
+                "server_host_name": "string",
+                "server_port": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "GUARDIUM_API": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {
+                            "access_id": "string",
+                            "password": "string",
+                            "secret_key": "string",
+                            "username": "string"
+                        },
+                        "reason": "string"
+                    }
+                ],
+                "server_host_name": "string",
+                "server_port": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "GUARDIUM_CLI": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {
+                            "username": "string"
+                        },
+                        "reason": "string"
+                    }
+                ],
+                "server_host_name": "string",
+                "server_port": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "HTTP": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {
+                            "password": "string",
+                            "username": "string"
+                        },
+                        "reason": "string"
+                    }
+                ],
+                "server_host_name": "string",
+                "server_port": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "IMPERVA": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {},
+                        "reason": "string"
+                    }
+                ],
+                "server_host_name": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "IMPERVA AGENTLESS GATEWAY": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {
+                            "password": "string",
+                            "username": "string"
+                        },
+                        "reason": "string"
+                    }
+                ],
+                "server_host_name": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "IMPERVA DAM": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {},
+                        "reason": "string"
+                    }
+                ],
+                "server_host_name": "string",
+                "server_port": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "IMPERVA DRA INCIDENTS": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {},
+                        "reason": "string"
+                    }
+                ],
+                "server_host_name": "string",
+                "server_port": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "IMPERVA WAREHOUSE": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {
+                            "password": "string",
+                            "username": "string"
+                        },
+                        "reason": "string"
+                    }
+                ],
+                "server_host_name": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "IMSZOS": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {
+                            "password": "string",
+                            "region": "string",
+                            "username": "string"
+                        },
+                        "reason": "string"
+                    }
+                ],
+                "server_host_name": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "KNOX": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {},
+                        "reason": "string"
+                    }
+                ],
+                "server_host_name": "string",
+                "server_port": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "LDAP": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {
+                            "password": "string",
+                            "secret_key": "string"
+                        },
+                        "reason": "string"
+                    }
+                ],
+                "server_host_name": "string",
+                "server_port": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "MIP": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {
+                            "client_id": "string",
+                            "client_secret": "string",
+                            "password": "string",
+                            "principal": "string",
+                            "resource_id": "string",
+                            "snowflake_role": "string",
+                            "tenant_id": "string"
+                        },
+                        "reason": "string"
+                    }
+                ],
+                "server_host_name": "string",
+                "server_port": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "MS ONEDRIVE": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {
+                            "client_id": "string",
+                            "secret_key": "string",
+                            "tenant_id": "string"
+                        },
+                        "reason": "string"
+                    }
+                ]
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "MS SHAREPOINT": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {
+                            "client_id": "string",
+                            "secret_key": "string",
+                            "tenant_id": "string"
+                        },
+                        "reason": "string"
+                    }
+                ]
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "NESSUS": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {
+                            "secret_key": "string"
+                        },
+                        "reason": "string"
+                    }
+                ],
+                "server_host_name": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "OPENAPI": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {
+                            "password": "string",
+                            "username": "string"
+                        },
+                        "reason": "string"
+                    }
+                ],
+                "server_host_name": "string",
+                "server_port": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "QUALYS": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {
+                            "password": "string",
+                            "username": "string"
+                        },
+                        "reason": "string"
+                    }
+                ],
+                "server_host_name": "string",
+                "server_port": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "SALESFORCE": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {
+                            "oauth_parameters": {
+                                "parameter": "value"
+                            },
+                            "token_endpoint": "string"
+                        },
+                        "reason": "string"
+                    }
+                ],
+                "server_host_name": "string",
+                "server_port": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "SERVICENOW": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {
+                            "password": "string",
+                            "username": "string"
+                        },
+                        "reason": "string"
+                    }
+                ],
+                "server_host_name": "string",
+                "server_port": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "SLACK": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {
+                            "token": "string",
+                            "username": "string"
+                        },
+                        "reason": "string"
+                    }
+                ],
+                "server_host_name": "string",
+                "server_port": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "SMTP": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {
+                            "password": "string",
+                            "username": "string"
+                        },
+                        "reason": "string"
+                    }
+                ],
+                "server_host_name": "string",
+                "server_port": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "SSH": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {},
+                        "reason": "string"
+                    }
+                ],
+                "server_host_name": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "ZOS FILE SYSTEM": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {
+                            "password": "string",
+                            "username": "string"
+                        },
+                        "reason": "string"
+                    }
+                ],
+                "server_host_name": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "others": {}
+}

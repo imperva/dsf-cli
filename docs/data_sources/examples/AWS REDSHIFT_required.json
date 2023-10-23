@@ -1,0 +1,24 @@
+{
+    "data": {
+        "assetData": {
+            "admin_email": "string",
+            "arn": "string",
+            "asset_display_name": "string",
+            "connections": [
+                {
+                    "connectionData": {
+                        "access_id": "string",
+                        "aws_connection_id": "string",
+                        "database_name": "string",
+                        "password": "string",
+                        "username": "string"
+                    },
+                    "reason": "string"
+                }
+            ],
+            "server_host_name": "string"
+        },
+        "asset_id": "string",
+        "gateway_id": "string"
+    }
+}

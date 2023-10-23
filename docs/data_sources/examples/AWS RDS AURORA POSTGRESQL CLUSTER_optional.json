@@ -1,0 +1,86 @@
+{
+    "data": {
+        "assetData": {
+            "admin_email": "string",
+            "arn": "string",
+            "asset_display_name": "string",
+            "asset_source": "string",
+            "audit_info": {
+                "policy_template_name": "<template name>"
+            },
+            "audit_pull_enabled": true,
+            "audit_type": "LOG_GROUP",
+            "availability_zones": "string",
+            "cluster_engine": "string",
+            "cluster_id": "string",
+            "cluster_member_id": "string",
+            "cluster_name": "string",
+            "connections": [
+                {
+                    "connectionData": {
+                        "amazon_secret": {
+                            "field_mapping": {
+                                "<local_field1>": "<remote_field1>",
+                                "<local_field2>": "<remote_field2>"
+                            },
+                            "secret_asset_id": "<AWS_asset_id>",
+                            "secret_name": "<secret_name>"
+                        },
+                        "autocommit": true,
+                        "ca_file": "string",
+                        "cert_file": "string",
+                        "driver": "string",
+                        "hashicorp_secret": {
+                            "field_mapping": {
+                                "<local_field1>": "<remote_field1>",
+                                "<local_field2>": "<remote_field2>"
+                            },
+                            "path": "secret/",
+                            "secret_asset_id": "<hashicorp_asset_id>",
+                            "secret_name": "<secret_name>"
+                        },
+                        "key_file": "string",
+                        "odbc_connection_string": "string",
+                        "passphrase": "string",
+                        "password": "string",
+                        "ssl": true,
+                        "ssl_server_cert": "string",
+                        "username": "string"
+                    },
+                    "reason": "string"
+                }
+            ],
+            "credentials_endpoint": "string",
+            "criticality": 1,
+            "database_name": "string",
+            "db_engine": "string",
+            "db_instances_display_name": "string",
+            "enable_audit_management": true,
+            "enable_audit_monitoring": true,
+            "enabled_logs_exports": "string",
+            "entitlement_enabled": true,
+            "gateway_service": "string",
+            "is_cluster": true,
+            "is_multi_zones": true,
+            "jsonar_uid": "string",
+            "location": "string",
+            "logs_destination_asset_id": "string",
+            "managed_by": "string",
+            "max_concurrent_conn": "string",
+            "owned_by": "string",
+            "parent_asset_id": "string",
+            "proxy": "string",
+            "region": "string",
+            "sdm_enabled": true,
+            "server_host_name": "string",
+            "server_port": "string",
+            "service_endpoint": "string",
+            "used_for": "Production",
+            "version": "string",
+            "virtual_hostname": "string",
+            "virtual_ip": "string"
+        },
+        "asset_id": "string",
+        "gateway_id": "string"
+    }
+}

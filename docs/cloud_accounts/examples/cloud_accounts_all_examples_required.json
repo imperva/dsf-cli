@@ -1,0 +1,85 @@
+{
+    "ALIBABA": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {
+                            "access_id": "string"
+                        },
+                        "reason": "string"
+                    }
+                ]
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "AWS": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "arn": "string",
+                "asset_display_name": "string",
+                "connections": [
+                    {
+                        "connectionData": {
+                            "access_id": "string",
+                            "region": "string",
+                            "secret_key": "string",
+                            "username": "string"
+                        },
+                        "reason": "string"
+                    }
+                ]
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "AZURE": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {
+                            "client_secret": "string",
+                            "key_file": "string"
+                        },
+                        "reason": "string"
+                    }
+                ],
+                "server_host_name": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "GCP": {
+        "data": {
+            "assetData": {
+                "admin_email": "string",
+                "asset_display_name": "string",
+                "asset_id": "string",
+                "connections": [
+                    {
+                        "connectionData": {
+                            "key_file": "string"
+                        },
+                        "reason": "string"
+                    }
+                ],
+                "server_host_name": "string"
+            },
+            "asset_id": "string",
+            "gateway_id": "string"
+        }
+    },
+    "cloud_accounts": {}
+}

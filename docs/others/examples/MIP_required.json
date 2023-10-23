@@ -1,0 +1,27 @@
+{
+    "data": {
+        "assetData": {
+            "admin_email": "string",
+            "asset_display_name": "string",
+            "asset_id": "string",
+            "connections": [
+                {
+                    "connectionData": {
+                        "client_id": "string",
+                        "client_secret": "string",
+                        "password": "string",
+                        "principal": "string",
+                        "resource_id": "string",
+                        "snowflake_role": "string",
+                        "tenant_id": "string"
+                    },
+                    "reason": "string"
+                }
+            ],
+            "server_host_name": "string",
+            "server_port": "string"
+        },
+        "asset_id": "string",
+        "gateway_id": "string"
+    }
+}
