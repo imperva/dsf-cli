@@ -11,7 +11,7 @@ def data_source_parse(subparsers):
                                                                help='additional help')
 
     data_source_create_parser = data_source_subparsers.add_parser('create', help='Create a new data source.',
-                                                                  usage='dsfcli [options] data_source create data_source_id')
+                                                                  usage='dsfcli [options] data_source create "<asset_id>"')
     data_source_create_parser.add_argument('json', help='The JSON object to POST.')
     data_source_create_parser.add_argument('--sync_type', default='', help='Determines whether to sync this operation with the gateways. '
                                                                            '\"Blocking\" here means the request will wait for the sync operation'
@@ -20,12 +20,12 @@ def data_source_parse(subparsers):
     data_source_create_parser.set_defaults(func=create)
 
     data_source_read_parser = data_source_subparsers.add_parser('read', help='Retrieve data source details by id.',
-                                                               usage='dsfcli [options] data_source read data_source_id')
+                                                               usage='dsfcli [options] data_source read "<asset_id>"')
     data_source_read_parser.add_argument('--id', help='The data_source ID.')
     data_source_read_parser.set_defaults(func=read)
 
     data_source_update_parser = data_source_subparsers.add_parser('update', help='Update an existing data source by id.',
-                                                                  usage='dsfcli [options] data_source update data_source_id')
+                                                                  usage='dsfcli [options] data_source update "<asset_id>"')
     data_source_update_parser.add_argument('id', help='The data_source ID.')
     data_source_update_parser.add_argument('json', help='The JSON object to PUT.')
     data_source_update_parser.add_argument('--sync_type', default='', help='Determines whether to sync this operation with the gateways. '
@@ -35,7 +35,7 @@ def data_source_parse(subparsers):
     data_source_update_parser.set_defaults(func=update)
 
     data_source_delete_parser = data_source_subparsers.add_parser('delete', help='Delete data source by id.',
-                                                                  usage='dsfcli [options] data_source delete data_source_id')
+                                                                  usage='dsfcli [options] data_source delete "<asset_id>"')
     data_source_delete_parser.add_argument('id', help='The data_source ID.')
     data_source_delete_parser.set_defaults(func=delete)
 
