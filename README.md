@@ -23,8 +23,10 @@ This CLI is a Python 3 application and has been tested with Python 3.6 -> 3.8
 ## Setting up the required environment variables:
     Set [environment variables](https://en.wikipedia.org/wiki/Environment_variable) to configure a token for authentication, and the specific hub endpoint:
     IMPV_DSF_HOST (required, example: https://1.2.3.4:8443)
-    IMPV_DSF_TOKEN (required, [click here](https://docs.imperva.com/bundle/v4.13-sonar-user-guide/page/84555.htm) to see how create a token, example: abcde-1234-efghi-6789-12345abcde)
+    IMPV_DSF_TOKEN (required, example: abcde-1234-efghi-6789-12345abcde)
 	IMPV_DSF_DEBUG (optional to see cli debug logs in terminal output)
+
+[CLICK HERE](https://docs.imperva.com/bundle/v4.13-sonar-user-guide/page/84555.htm) to see how create a token to authenticate.
 
 ## Usage:
     usage: dsfcli <resource> <command> [options]
