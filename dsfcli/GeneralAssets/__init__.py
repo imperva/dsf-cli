@@ -11,7 +11,7 @@ def general_assets_parse(subparsers):
                                                                help='additional help')
 
     general_assets_create_parser = general_assets_subparsers.add_parser('create', help='Create a new general assets.',
-                                                                  usage='dsfcli [options] general_assets get general_assets_id')
+                                                                  usage='dsfcli [options] general_assets create general_assets_id')
     general_assets_create_parser.add_argument('json', help='The JSON object to POST.')
     general_assets_create_parser.add_argument('--sync_type', default='', help='Determines whether to sync this operation with the gateways. '
                                                                            '\"Blocking\" here means the request will wait for the sync operation'
@@ -20,12 +20,12 @@ def general_assets_parse(subparsers):
     general_assets_create_parser.set_defaults(func=create)
 
     general_assets_read_parser = general_assets_subparsers.add_parser('read', help='Retrieve general assets details by id.',
-                                                               usage='dsfcli [options] general_assets get general_assets_id')
+                                                               usage='dsfcli [options] general_assets read general_assets_id')
     general_assets_read_parser.add_argument('--id', help='The general_assets ID.')
     general_assets_read_parser.set_defaults(func=read)
 
     general_assets_update_parser = general_assets_subparsers.add_parser('update', help='Update an existing general assets by id.',
-                                                                  usage='dsfcli [options] general_assets get general_assets_id')
+                                                                  usage='dsfcli [options] general_assets update general_assets_id')
     general_assets_update_parser.add_argument('id', help='The general_assets ID.')
     general_assets_update_parser.add_argument('json', help='The JSON object to PUT.')
     general_assets_update_parser.add_argument('--sync_type', default='', help='Determines whether to sync this operation with the gateways. '
