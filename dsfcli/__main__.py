@@ -4,7 +4,7 @@ from .Utils import clidriver
 
 def main():
     if sys.argv.__len__() == 1:
-        print('Usage: dsfcli --help')
+        print('Usage: dsf --help')
     else:
         sys.exit(clidriver.main(sys.argv[1:]))
 

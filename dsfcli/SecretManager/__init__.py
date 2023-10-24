@@ -6,12 +6,12 @@ from swagger_client.rest import ApiException
 def secret_manager_parse(subparsers):
     secret_manager_parser = subparsers.add_parser('secret_manager',
                                                help='Create and manage secret managers using the API.',
-                                               usage='dsfcli [options] secret_manager <command> [options]')
+                                               usage='dsf [options] secret_manager <command> [options]')
     secret_manager_subparsers = secret_manager_parser.add_subparsers(description='valid subcommands',
                                                                help='additional help')
 
     secret_manager_create_parser = secret_manager_subparsers.add_parser('create', help='Create a new secret manager.',
-                                                                  usage=get_help("secret_managers", "dsfcli secret_manager create"))
+                                                                  usage=get_help("dsfcli secret_manager create"))
     secret_manager_create_parser.add_argument('json', help='The JSON object to POST.')
     secret_manager_create_parser.add_argument('--sync_type', default='', help='Determines whether to sync this operation with the gateways. '
                                                                            '\"Blocking\" here means the request will wait for the sync operation'
@@ -20,12 +20,12 @@ def secret_manager_parse(subparsers):
     secret_manager_create_parser.set_defaults(func=create)
 
     secret_manager_read_parser = secret_manager_subparsers.add_parser('read', help='Retrieve secret manager details by id.',
-                                                               usage=get_help("secret_managers", "dsfcli secret_manager read"))
+                                                               usage=get_help("dsfcli secret_manager read"))
     secret_manager_read_parser.add_argument('--id', help='The secret_manager ID.')
     secret_manager_read_parser.set_defaults(func=read)
 
     secret_manager_update_parser = secret_manager_subparsers.add_parser('update', help='Update an existing secret manager by id.',
-                                                                  usage=get_help("secret_managers", "dsfcli secret_manager update"))
+                                                                  usage=get_help("dsfcli secret_manager update"))
     secret_manager_update_parser.add_argument('id', help='The secret_manager ID.')
     secret_manager_update_parser.add_argument('json', help='The JSON object to PUT.')
     secret_manager_update_parser.add_argument('--sync_type', default='', help='Determines whether to sync this operation with the gateways. '
@@ -35,7 +35,7 @@ def secret_manager_parse(subparsers):
     secret_manager_update_parser.set_defaults(func=update)
 
     secret_manager_delete_parser = secret_manager_subparsers.add_parser('delete', help='Delete secret manager by id..',
-                                                                  usage=get_help("secret_managers", "dsfcli secret_manager delete"))
+                                                                  usage=get_help("dsfcli secret_manager delete"))
     secret_manager_delete_parser.add_argument('id', help='The secret_manager ID.')
     secret_manager_delete_parser.set_defaults(func=delete)
 
@@ -80,9 +80,13 @@ def delete(args, configuration):
         return e
 
 
-def get_help(asset_type, match):
+def get_help(match):
+    import os
+    pwd = os.path.dirname(__file__)
+    doc = "README.md"
+    abs_path = os.path.join(pwd, doc)
     new_line = "\nEXAMPLES:\n"
-    lines = open(f"dsfcli/docs/{asset_type}/README.md", "r").readlines()
+    lines = open(abs_path, "r").readlines()
     for line in lines:
         if f"{match}" in line:
             clean_line = line.replace("<br /><br />", "")

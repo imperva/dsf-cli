@@ -23,7 +23,7 @@ configuration.api_key["Authorization"] = "Bearer {}".format(DSF_TOKEN)
 configuration.host = "{}/dsf".format(DSF_HOST)
 configuration.debug = DSF_DEBUG
 
-parser = argparse.ArgumentParser(prog='dsfcli',
+parser = argparse.ArgumentParser(prog='dsf',
                                  usage='%(prog)s <resource> <command> [options]',
                                  description="CLI for gateway, asset CRUD on DSF via API.")
 parser.add_argument('--version', action='version', version=dsfcli.__version__)

@@ -6,12 +6,12 @@ from swagger_client.rest import ApiException
 def general_assets_parse(subparsers):
     general_assets_parser = subparsers.add_parser('general_asset',
                                                help='Create and manage general assets using the API.',
-                                               usage='dsfcli [options] general_asset <command> [options]')
+                                               usage='dsf [options] general_asset <command> [options]')
     general_assets_subparsers = general_assets_parser.add_subparsers(description='valid subcommands',
                                                                help='additional help')
 
     general_assets_create_parser = general_assets_subparsers.add_parser('create', help='Create a new general assets.',
-                                                                  usage=get_help("others", "dsfcli general_asset create"))
+                                                                  usage=get_help("dsfcli general_asset create"))
     general_assets_create_parser.add_argument('json', help='The JSON object to POST.')
     general_assets_create_parser.add_argument('--sync_type', default='', help='Determines whether to sync this operation with the gateways. '
                                                                            '\"Blocking\" here means the request will wait for the sync operation'
@@ -20,12 +20,12 @@ def general_assets_parse(subparsers):
     general_assets_create_parser.set_defaults(func=create)
 
     general_assets_read_parser = general_assets_subparsers.add_parser('read', help='Retrieve general asset details by id.',
-                                                               usage=get_help("others", "dsfcli general_asset read"))
+                                                               usage=get_help("dsfcli general_asset read"))
     general_assets_read_parser.add_argument('--id', help='The general_assets ID.')
     general_assets_read_parser.set_defaults(func=read)
 
     general_assets_update_parser = general_assets_subparsers.add_parser('update', help='Update an existing general assets by id.',
-                                                                  usage=get_help("others", "dsfcli general_asset update"))
+                                                                  usage=get_help("dsfcli general_asset update"))
     general_assets_update_parser.add_argument('id', help='The general_assets ID.')
     general_assets_update_parser.add_argument('json', help='The JSON object to PUT.')
     general_assets_update_parser.add_argument('--sync_type', default='', help='Determines whether to sync this operation with the gateways. '
@@ -35,7 +35,7 @@ def general_assets_parse(subparsers):
     general_assets_update_parser.set_defaults(func=update)
 
     general_assets_delete_parser = general_assets_subparsers.add_parser('delete', help='Delete general assets by id.',
-                                                                  usage=get_help("others", "dsfcli general_asset delete"))
+                                                                  usage=get_help("dsfcli general_asset delete"))
     general_assets_delete_parser.add_argument('id', help='The general_assets ID.')
     general_assets_delete_parser.set_defaults(func=delete)
 
@@ -80,9 +80,13 @@ def delete(args, configuration):
         return e
 
 
-def get_help(asset_type, match):
+def get_help(match):
+    import os
+    pwd = os.path.dirname(__file__)
+    doc = "README.md"
+    abs_path = os.path.join(pwd, doc)
     new_line = "\nEXAMPLES:\n"
-    lines = open(f"dsfcli/docs/{asset_type}/README.md", "r").readlines()
+    lines = open(abs_path, "r").readlines()
     for line in lines:
         if f"{match}" in line:
             clean_line = line.replace("<br /><br />", "")

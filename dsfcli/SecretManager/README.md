@@ -1,35 +1,35 @@
-## DSF-CLI - Cloud Accounts:
-[Click here](https://github.com/imperva/dsf-cli/tree/main/docs/cloud_accounts/examples) for example payloads for optional and required fields for all cloud account types.
+## DSF-CLI - Secret Managers:
+Example payloads for Secret Managers
+[Click here](https://github.com/imperva/dsf-cli/tree/main/docs/secrets_managers/examples) for example payloads for optional and required fields for all secret manager types.
 
 ### Usage:
-`dsfcli cloud_account -h`
+`dsfcli secret_manager -h`
 
-### List all cloud_accounts:
-`dsfcli cloud_account read`
+### List all secret_managers:
+`dsfcli secret_manager read`
 
-### Retrieve a specific cloud_accounts by id:
-`dsfcli cloud_account read "<asset_id>"`<br /><br />
-`dsfcli cloud_account read "arn:aws:rds:us-east-2:1234567890:db:your-db-name-here"`
+### Retrieve a specific secret_manager by id:
+`dsfcli secret_manager read "<asset_id>"`<br /><br />
+`dsfcli secret_manager read "my.hashicorp.vault.server.com"`
 
-### Create a cloud_account from input string:
-`dsfcli cloud_account create "<asset_id>" '<json-object>'`<br /><br />
-`dsfcli cloud_account create '{"data": {"assetData": {"asset_display_name": "your-aws-ec2-iam-role-cloud-asset","arn": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway","asset_id": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway","admin_email": "test@imperva.com","connections": [{"reason": "default","connectionData": {"auth_mechanism": "default","region": "us-east-1",}}]},"serverType": "AWS","gatewayId": "12345-abcde-12345-abcde-12345"}}'`
+### Create a secret_manager from input string:
+`dsfcli secret_manager create '<json-object>'`<br /><br />
+`dsfcli secret_manager create '{"data": {"assetData": {"asset_display_name": "some-hashicorp-vault-server","asset_id": "my.hashicorp.vault.server.com","Server Host Name": "my.hashicorp.vault.server.com","Server IP": "1.2.3.4","Server Port": "8200","admin_email": "ba@imperva.com","connections": [{"reason": "default","connectionData": {"auth_mechanism": "ec2","role_name": "vault-role-for-ec2"}}]},"serverType": "HASHICORP","parentAssetId": "","gatewayId": "e33bfbe4-a93a-c4e5-8e9c-6e5558c2e2cd"}}'`
 
-### Create a cloud_account from local file:
-`dsfcli cloud_account create "<asset_id>" '<json-object>'`<br /><br />
-`dsfcli cloud_account create "$(cat < cloud_account_AWS.json)"`
+### Create a secret_manager from local file:
+`dsfcli secret_manager create '<json-object>'`<br /><br />`dsfcli secret_manager create "$(cat < secret_manager_AWS.json)"`
 
 ### Update a data_source from input string by id:
-`dsfcli cloud_account update "<asset_id>" '<json-object>'`<br /><br />
-`dsfcli cloud_account update "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway" '{"data": {"assetData": {"asset_display_name": "your-aws-ec2-iam-role-cloud-asset","arn": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway","asset_id": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway","admin_email": "test@imperva.com","connections": [{"reason": "default","connectionData": {"auth_mechanism": "default","region": "us-east-1",}}]},"serverType": "AWS","gatewayId": "12345-abcde-12345-abcde-12345"}}'`
+`dsfcli secret_manager update "<asset_id>" '<json-object>'`<br /><br />
+`dsfcli secret_manager update "my.hashicorp.vault.server.com" '{"data": {"assetData": {"asset_display_name": "some-hashicorp-vault-server","asset_id": "my.hashicorp.vault.server.com","Server Host Name": "my.hashicorp.vault.server.com","Server IP": "1.2.3.4","Server Port": "8200","admin_email": "ba@imperva.com","connections": [{"reason": "default","connectionData": {"auth_mechanism": "ec2","role_name": "vault-role-for-ec2"}}]},"serverType": "HASHICORP","parentAssetId": "","gatewayId": "e33bfbe4-a93a-c4e5-8e9c-6e5558c2e2cd"}}'`
 
-### Update a cloud_account from local file by id:
-`dsfcli cloud_account update "<asset_id>" '<json-object>'`<br /><br />
-`dsfcli cloud_account update "$(cat < cloud_account_AWS.json)" "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway"`
+### Update a secret_manager from local file by id:
+`dsfcli secret_manager update "<asset_id>" '<json-object>'`<br /><br />
+`dsfcli secret_manager update "$(cat < secret_manager_AWS.json)" "my.hashicorp.vault.server.com"`
 
-### Delete a cloud_account by id:
-`dsfcli cloud_account delete "<asset_id>" '<json-object>'`<br /><br />
-`dsfcli cloud_account delete "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway"`
+### Delete a secret_manager by id:
+`dsfcli secret_manager delete "<asset_id>" '<json-object>'`<br /><br />
+`dsfcli secret_manager delete "my.hashicorp.vault.server.com"`
 
 #### Config Options ####
 
@@ -67,7 +67,7 @@
 
 `data.server_host_name` [string] - _(required)_ Hostname (or IP if name is unknown) Default Value: null
 
-`data.server_port` [string] - _(optional)_  Default Value: "443"
+`data.server_port` [string] - _(optional)_  Default Value: "16114"
 
 `data.service_endpoints` [map] - _(optional)_ Specify particular endpoints for a given service in the form of <service name>: "endpoint" Default Value: null
 
@@ -81,7 +81,7 @@
 
 `data.connections[].connectionData.ca_certs_path` [string] - _(optional)_ Certificate authority certificates path; what location should the sysetm look for certificate information from. Equivalent to --capath in a curl call Default Value: null
 
-`data.connections[].connectionData.client_secret` [string] - _(required)_ This a string containing a secret used by the application to prove its identity when requesting a token. You can get a secret by going to Azure Active Directory -> App Registrations -> Owned Applications, selecting the desired application and then going to Certificates & secrets -> Client secrets -> + New client secret Default Value: null
+`data.connections[].connectionData.cert_file` [string] - _(optional)_  Default Value: null
 
 `data.connections[].connectionData.credential_fields` [map] - _(optional)_ Document containing values to build a profile from. Filling this will create a profile using the given profile name Default Value: null
 
@@ -89,17 +89,16 @@
 
 `data.connections[].connectionData.hashicorp_secret` [map] - _(optional)_ Configuration to integrate with HashiCorp Vault Default Value: null
 
-`data.connections[].connectionData.key_file` [string] - _(required)_ Location on disk on the key to be used to authenticate Default Value: null
+`data.connections[].connectionData.key_file` [string] - _(optional)_  Default Value: null
 
 `data.connections[].connectionData.region` [string] - _(required)_ Default AWS region for this asset Default Value: null
 
-`data.connections[].connectionData.role_name` [string] - _(optional)_ What role is used to get credentials from. Default Value: ""
+`data.connections[].connectionData.role_name` [string] - _(required)_ Role to use for authentication Default Value: null
 
 `data.connections[].connectionData.secret_key` [string] - _(required)_ The Secret access key used to authenticate Default Value: null
+
+`data.connections[].connectionData.self_signed` [bool] - _(optional)_  Default Value: null
 
 `data.connections[].connectionData.ssl` [bool] - _(optional)_ If true, use SSL when connecting Default Value: null
 
 `data.connections[].connectionData.username` [string] - _(required)_ The name of a profile in /imperva/local/credentials/.aws/credentials to use for authenticating Default Value: null
-
-
-

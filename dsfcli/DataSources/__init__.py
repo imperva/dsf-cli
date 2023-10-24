@@ -6,12 +6,12 @@ from swagger_client.rest import ApiException
 def data_source_parse(subparsers):
     data_source_parser = subparsers.add_parser('data_source',
                                                help='Create and manage data sources the API.',
-                                               usage='dsfcli [options] data_source <command> [options]')
+                                               usage='dsf [options] data_source <command> [options]')
     data_source_subparsers = data_source_parser.add_subparsers(description='valid subcommands',
                                                                help='additional help')
 
     data_source_create_parser = data_source_subparsers.add_parser('create', help='Create a new data source.',
-                                                                  usage=get_help("data_sources", "dsfcli data_source create"))
+                                                                  usage=get_help("dsfcli data_source create"))
     data_source_create_parser.add_argument('json', help='The JSON object to POST.')
     data_source_create_parser.add_argument('--sync_type', default='', help='Determines whether to sync this operation with the gateways. '
                                                                            '\"Blocking\" here means the request will wait for the sync operation'
@@ -20,12 +20,12 @@ def data_source_parse(subparsers):
     data_source_create_parser.set_defaults(func=create)
 
     data_source_read_parser = data_source_subparsers.add_parser('read', help='Retrieve data source details by id.',
-                                                               usage=get_help("data_sources", "dsfcli data_source read"))
+                                                               usage=get_help("dsfcli data_source read"))
     data_source_read_parser.add_argument('--id', help='The data_source ID.')
     data_source_read_parser.set_defaults(func=read)
 
     data_source_update_parser = data_source_subparsers.add_parser('update', help='Update an existing data source by id.',
-                                                                  usage=get_help("data_sources", "dsfcli data_source update"))
+                                                                  usage=get_help("dsfcli data_source update"))
     data_source_update_parser.add_argument('id', help='The data_source ID.')
     data_source_update_parser.add_argument('json', help='The JSON object to PUT.')
     data_source_update_parser.add_argument('--sync_type', default='', help='Determines whether to sync this operation with the gateways. '
@@ -35,7 +35,7 @@ def data_source_parse(subparsers):
     data_source_update_parser.set_defaults(func=update)
 
     data_source_delete_parser = data_source_subparsers.add_parser('delete', help='Delete data source by id.',
-                                                                  usage=get_help("data_sources", "dsfcli data_source delete"))
+                                                                  usage=get_help("dsfcli data_source delete"))
     data_source_delete_parser.add_argument('id', help='The data_source ID.')
     data_source_delete_parser.set_defaults(func=delete)
 
@@ -80,9 +80,13 @@ def delete(args, configuration):
         return e
 
 
-def get_help(asset_type, match):
+def get_help(match):
+    import os
+    pwd = os.path.dirname(__file__)
+    doc = "README.md"
+    abs_path = os.path.join(pwd, doc)
     new_line = "\nEXAMPLES:\n"
-    lines = open(f"dsfcli/docs/{asset_type}/README.md", "r").readlines()
+    lines = open(abs_path, "r").readlines()
     for line in lines:
         if f"{match}" in line:
             clean_line = line.replace("<br /><br />", "")
