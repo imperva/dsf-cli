@@ -1,5 +1,5 @@
 ## DSF-CLI - Data Sources:
-[Click here](https://github.com/imperva/dsf-cli/tree/main/docs/data_sources/examples) for example payloads for optional and required fields for all data source types.
+[Click here](https://github.com/imperva/dsf-cli/tree/main/dsfcli/docs/data_sources/examples) for example payloads for optional and required fields for all data source types.
 
 ### Usage:
 `dsfcli data_source -h`
