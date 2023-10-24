@@ -11,7 +11,7 @@ def general_assets_parse(subparsers):
                                                                help='additional help')
 
     general_assets_create_parser = general_assets_subparsers.add_parser('create', help='Create a new general assets.',
-                                                                  usage='dsfcli [options] general_asset create "<asset_id>"')
+                                                                  usage=get_help("others", "dsfcli general_asset create"))
     general_assets_create_parser.add_argument('json', help='The JSON object to POST.')
     general_assets_create_parser.add_argument('--sync_type', default='', help='Determines whether to sync this operation with the gateways. '
                                                                            '\"Blocking\" here means the request will wait for the sync operation'
@@ -20,12 +20,12 @@ def general_assets_parse(subparsers):
     general_assets_create_parser.set_defaults(func=create)
 
     general_assets_read_parser = general_assets_subparsers.add_parser('read', help='Retrieve general asset details by id.',
-                                                               usage='dsfcli [options] general_assets read "<asset_id>"')
+                                                               usage=get_help("others", "dsfcli general_asset read"))
     general_assets_read_parser.add_argument('--id', help='The general_assets ID.')
     general_assets_read_parser.set_defaults(func=read)
 
     general_assets_update_parser = general_assets_subparsers.add_parser('update', help='Update an existing general assets by id.',
-                                                                  usage='dsfcli [options] general_assets update "<asset_id>"')
+                                                                  usage=get_help("others", "dsfcli general_asset update"))
     general_assets_update_parser.add_argument('id', help='The general_assets ID.')
     general_assets_update_parser.add_argument('json', help='The JSON object to PUT.')
     general_assets_update_parser.add_argument('--sync_type', default='', help='Determines whether to sync this operation with the gateways. '
@@ -35,7 +35,7 @@ def general_assets_parse(subparsers):
     general_assets_update_parser.set_defaults(func=update)
 
     general_assets_delete_parser = general_assets_subparsers.add_parser('delete', help='Delete general assets by id.',
-                                                                  usage='dsfcli [options] general_assets delete "<asset_id>"')
+                                                                  usage=get_help("others", "dsfcli general_asset delete"))
     general_assets_delete_parser.add_argument('id', help='The general_assets ID.')
     general_assets_delete_parser.set_defaults(func=delete)
 
@@ -78,3 +78,13 @@ def delete(args, configuration):
             return ga_instance.delete_asset1(param["id"])
     except ApiException as e:
         return e
+
+
+def get_help(asset_type, match):
+    new_line = "\nEXAMPLES:\n"
+    lines = open(f"dsfcli/docs/{asset_type}/README.md", "r").readlines()
+    for line in lines:
+        if f"{match}" in line:
+            clean_line = line.replace("<br /><br />", "")
+            new_line += f"{clean_line}\n"
+    return new_line

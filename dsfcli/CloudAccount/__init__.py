@@ -11,7 +11,7 @@ def cloud_account_parse(subparsers):
                                                                help='additional help')
 
     cloud_account_create_parser = cloud_account_subparsers.add_parser('create', help='Create a new cloud account.',
-                                                                  usage='dsfcli [options] cloud_account create "<asset_id>"')
+                                                                  usage=get_help("cloud_accounts", "dsfcli cloud_account create"))
     cloud_account_create_parser.add_argument('json', help='The JSON object to POST.')
     cloud_account_create_parser.add_argument('--sync_type', default='', help='Determines whether to sync this operation with the gateways. '
                                                                            '\"Blocking\" here means the request will wait for the sync operation'
@@ -20,12 +20,12 @@ def cloud_account_parse(subparsers):
     cloud_account_create_parser.set_defaults(func=create)
 
     cloud_account_read_parser = cloud_account_subparsers.add_parser('read', help='Retrieve cloud account details by id.',
-                                                               usage='dsfcli [options] cloud_account read "<asset_id>"')
+                                                               usage=get_help("cloud_accounts", "dsfcli cloud_account read")) #'dsfcli [options] cloud_account read "<asset_id>"')
     cloud_account_read_parser.add_argument('--id', help='The cloud_account ID.')
     cloud_account_read_parser.set_defaults(func=read)
 
     cloud_account_update_parser = cloud_account_subparsers.add_parser('update', help='Update an existing cloud account by id.',
-                                                                  usage='dsfcli [options] cloud_account update "<asset_id>"')
+                                                                  usage=get_help("cloud_accounts", "dsfcli cloud_account update"))
     cloud_account_update_parser.add_argument('id', help='The cloud_account ID.')
     cloud_account_update_parser.add_argument('json', help='The JSON object to PUT.')
     cloud_account_update_parser.add_argument('--sync_type', default='', help='Determines whether to sync this operation with the gateways. '
@@ -35,7 +35,7 @@ def cloud_account_parse(subparsers):
     cloud_account_update_parser.set_defaults(func=update)
 
     cloud_account_delete_parser = cloud_account_subparsers.add_parser('delete', help='Delete cloud account by id.',
-                                                                  usage='dsfcli [options] cloud_account delete "<asset_id>"')
+                                                                  usage=get_help("cloud_accounts", "dsfcli cloud_account delete"))
     cloud_account_delete_parser.add_argument('id', help='The cloud_account ID.')
     cloud_account_delete_parser.set_defaults(func=delete)
 
@@ -78,3 +78,13 @@ def delete(args, configuration):
             return ca_instance.delete_asset4(param["id"])
     except ApiException as e:
         return e
+
+
+def get_help(asset_type, match):
+    new_line = "\nEXAMPLES:\n"
+    lines = open(f"dsfcli/docs/{asset_type}/README.md", "r").readlines()
+    for line in lines:
+        if f"{match}" in line:
+            clean_line = line.replace("<br /><br />", "")
+            new_line += f"{clean_line}\n"
+    return new_line
