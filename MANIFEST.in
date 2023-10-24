@@ -1,0 +1,3 @@
+include dsfcli/docs/*/*.md
+prune venv/
+prune test/

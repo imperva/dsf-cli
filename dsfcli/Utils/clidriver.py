@@ -10,6 +10,7 @@ import dsfcli
 from swagger_client import Configuration
 from swagger_client.rest import ApiException
 import urllib3
+
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 DSF_HOST = os.getenv("IMPV_DSF_HOST")
