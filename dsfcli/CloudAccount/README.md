@@ -1,35 +1,35 @@
 ## DSF-CLI - Cloud Accounts:
-[Click here](https://github.com/imperva/dsf-cli/tree/main/docs/cloud_accounts/examples) for example payloads for optional and required fields for all cloud account types.
+[Click here](https://github.com/imperva/dsf-cli/tree/main/dsfcli/docs/cloud_accounts/examples) for example payloads for optional and required fields for all cloud account types.
 
 ### Usage:
-`dsfcli cloud_account -h`
+`dsf cloud_account -h`
 
 ### List all cloud_accounts:
-`dsfcli cloud_account read`
+`dsf cloud_account read`
 
 ### Retrieve a specific cloud_accounts by id:
-`dsfcli cloud_account read "<asset_id>"`<br /><br />
-`dsfcli cloud_account read "arn:aws:rds:us-east-2:1234567890:db:your-db-name-here"`
+`dsf cloud_account read "<asset_id>"`<br /><br />
+`dsf cloud_account read "arn:aws:rds:us-east-2:1234567890:db:your-db-name-here"`
 
 ### Create a cloud_account from input string:
-`dsfcli cloud_account create "<asset_id>" '<json-object>'`<br /><br />
-`dsfcli cloud_account create '{"data": {"assetData": {"asset_display_name": "your-aws-ec2-iam-role-cloud-asset","arn": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway","asset_id": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway","admin_email": "test@imperva.com","connections": [{"reason": "default","connectionData": {"auth_mechanism": "default","region": "us-east-1",}}]},"serverType": "AWS","gatewayId": "12345-abcde-12345-abcde-12345"}}'`
+`dsf cloud_account create "<asset_id>" '<json-object>'`<br /><br />
+`dsf cloud_account create '{"data": {"assetData": {"asset_display_name": "your-aws-ec2-iam-role-cloud-asset","arn": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway","asset_id": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway","admin_email": "test@imperva.com","connections": [{"reason": "default","connectionData": {"auth_mechanism": "default","region": "us-east-1",}}]},"serverType": "AWS","gatewayId": "12345-abcde-12345-abcde-12345"}}'`
 
 ### Create a cloud_account from local file:
-`dsfcli cloud_account create "<asset_id>" '<json-object>'`<br /><br />
-`dsfcli cloud_account create "$(cat < cloud_account_AWS.json)"`
+`dsf cloud_account create "<asset_id>" '<json-object>'`<br /><br />
+`dsf cloud_account create "$(cat < cloud_account_AWS.json)"`
 
 ### Update a data_source from input string by id:
-`dsfcli cloud_account update "<asset_id>" '<json-object>'`<br /><br />
-`dsfcli cloud_account update "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway" '{"data": {"assetData": {"asset_display_name": "your-aws-ec2-iam-role-cloud-asset","arn": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway","asset_id": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway","admin_email": "test@imperva.com","connections": [{"reason": "default","connectionData": {"auth_mechanism": "default","region": "us-east-1",}}]},"serverType": "AWS","gatewayId": "12345-abcde-12345-abcde-12345"}}'`
+`dsf cloud_account update "<asset_id>" '<json-object>'`<br /><br />
+`dsf cloud_account update "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway" '{"data": {"assetData": {"asset_display_name": "your-aws-ec2-iam-role-cloud-asset","arn": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway","asset_id": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway","admin_email": "test@imperva.com","connections": [{"reason": "default","connectionData": {"auth_mechanism": "default","region": "us-east-1",}}]},"serverType": "AWS","gatewayId": "12345-abcde-12345-abcde-12345"}}'`
 
 ### Update a cloud_account from local file by id:
-`dsfcli cloud_account update "<asset_id>" '<json-object>'`<br /><br />
-`dsfcli cloud_account update "$(cat < cloud_account_AWS.json)" "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway"`
+`dsf cloud_account update "<asset_id>" '<json-object>'`<br /><br />
+`dsf cloud_account update "$(cat < cloud_account_AWS.json)" "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway"`
 
 ### Delete a cloud_account by id:
-`dsfcli cloud_account delete "<asset_id>" '<json-object>'`<br /><br />
-`dsfcli cloud_account delete "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway"`
+`dsf cloud_account delete "<asset_id>" '<json-object>'`<br /><br />
+`dsf cloud_account delete "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway"`
 
 #### Config Options ####
 

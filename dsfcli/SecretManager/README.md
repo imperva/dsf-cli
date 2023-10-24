@@ -1,35 +1,35 @@
 ## DSF-CLI - Secret Managers:
 Example payloads for Secret Managers
-[Click here](https://github.com/imperva/dsf-cli/tree/main/docs/secrets_managers/examples) for example payloads for optional and required fields for all secret manager types.
+[Click here](https://github.com/imperva/dsf-cli/tree/main/dsfcli/docs/secrets_managers/examples) for example payloads for optional and required fields for all secret manager types.
 
 ### Usage:
-`dsfcli secret_manager -h`
+`dsf secret_manager -h`
 
 ### List all secret_managers:
-`dsfcli secret_manager read`
+`dsf secret_manager read`
 
 ### Retrieve a specific secret_manager by id:
-`dsfcli secret_manager read "<asset_id>"`<br /><br />
-`dsfcli secret_manager read "my.hashicorp.vault.server.com"`
+`dsf secret_manager read "<asset_id>"`<br /><br />
+`dsf secret_manager read "my.hashicorp.vault.server.com"`
 
 ### Create a secret_manager from input string:
-`dsfcli secret_manager create '<json-object>'`<br /><br />
-`dsfcli secret_manager create '{"data": {"assetData": {"asset_display_name": "some-hashicorp-vault-server","asset_id": "my.hashicorp.vault.server.com","Server Host Name": "my.hashicorp.vault.server.com","Server IP": "1.2.3.4","Server Port": "8200","admin_email": "ba@imperva.com","connections": [{"reason": "default","connectionData": {"auth_mechanism": "ec2","role_name": "vault-role-for-ec2"}}]},"serverType": "HASHICORP","parentAssetId": "","gatewayId": "e33bfbe4-a93a-c4e5-8e9c-6e5558c2e2cd"}}'`
+`dsf secret_manager create '<json-object>'`<br /><br />
+`dsf secret_manager create '{"data": {"assetData": {"asset_display_name": "some-hashicorp-vault-server","asset_id": "my.hashicorp.vault.server.com","Server Host Name": "my.hashicorp.vault.server.com","Server IP": "1.2.3.4","Server Port": "8200","admin_email": "ba@imperva.com","connections": [{"reason": "default","connectionData": {"auth_mechanism": "ec2","role_name": "vault-role-for-ec2"}}]},"serverType": "HASHICORP","parentAssetId": "","gatewayId": "e33bfbe4-a93a-c4e5-8e9c-6e5558c2e2cd"}}'`
 
 ### Create a secret_manager from local file:
-`dsfcli secret_manager create '<json-object>'`<br /><br />`dsfcli secret_manager create "$(cat < secret_manager_AWS.json)"`
+`dsf secret_manager create '<json-object>'`<br /><br />`dsf secret_manager create "$(cat < secret_manager_AWS.json)"`
 
 ### Update a data_source from input string by id:
-`dsfcli secret_manager update "<asset_id>" '<json-object>'`<br /><br />
-`dsfcli secret_manager update "my.hashicorp.vault.server.com" '{"data": {"assetData": {"asset_display_name": "some-hashicorp-vault-server","asset_id": "my.hashicorp.vault.server.com","Server Host Name": "my.hashicorp.vault.server.com","Server IP": "1.2.3.4","Server Port": "8200","admin_email": "ba@imperva.com","connections": [{"reason": "default","connectionData": {"auth_mechanism": "ec2","role_name": "vault-role-for-ec2"}}]},"serverType": "HASHICORP","parentAssetId": "","gatewayId": "e33bfbe4-a93a-c4e5-8e9c-6e5558c2e2cd"}}'`
+`dsf secret_manager update "<asset_id>" '<json-object>'`<br /><br />
+`dsf secret_manager update "my.hashicorp.vault.server.com" '{"data": {"assetData": {"asset_display_name": "some-hashicorp-vault-server","asset_id": "my.hashicorp.vault.server.com","Server Host Name": "my.hashicorp.vault.server.com","Server IP": "1.2.3.4","Server Port": "8200","admin_email": "ba@imperva.com","connections": [{"reason": "default","connectionData": {"auth_mechanism": "ec2","role_name": "vault-role-for-ec2"}}]},"serverType": "HASHICORP","parentAssetId": "","gatewayId": "e33bfbe4-a93a-c4e5-8e9c-6e5558c2e2cd"}}'`
 
 ### Update a secret_manager from local file by id:
-`dsfcli secret_manager update "<asset_id>" '<json-object>'`<br /><br />
-`dsfcli secret_manager update "$(cat < secret_manager_AWS.json)" "my.hashicorp.vault.server.com"`
+`dsf secret_manager update "<asset_id>" '<json-object>'`<br /><br />
+`dsf secret_manager update "$(cat < secret_manager_AWS.json)" "my.hashicorp.vault.server.com"`
 
 ### Delete a secret_manager by id:
-`dsfcli secret_manager delete "<asset_id>" '<json-object>'`<br /><br />
-`dsfcli secret_manager delete "my.hashicorp.vault.server.com"`
+`dsf secret_manager delete "<asset_id>" '<json-object>'`<br /><br />
+`dsf secret_manager delete "my.hashicorp.vault.server.com"`
 
 #### Config Options ####
 
