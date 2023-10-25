@@ -19,6 +19,10 @@ Set [environment variables](https://en.wikipedia.org/wiki/Environment_variable) 
 	dsf gateway read
 	dsf data_source -h
 	dsf data_source read
+	dsf data_source read --id="arn:aws:rds:us-east-2:123456789:db:your-host-here"
+	dsf data_source create '{"data": {"assetData": {"asset_display_name": "arn:aws:rds:us-east-2:123456789:db:your-host-here","arn": "arn:aws:rds:us-east-2:123456789:db:your-host-here","Server Host Name": "your-db.endpoint.us-east-2.rds.amazonaws.com","admin_email": "test@imperva.com","connections": []},"serverType": "AWS RDS MYSQL","gatewayId": "12345-abcde-12345-abcde"}}'`
+	dsf data_source update "arn:aws:rds:us-east-2:123456789:db:your-host-here" '{"data": {"assetData": {"asset_display_name": "arn:aws:rds:us-east-2:123456789:db:your-host-here","arn": "arn:aws:rds:us-east-2:123456789:db:your-host-here","Server Host Name": "your-db.endpoint.us-east-2.rds.amazonaws.com","admin_email": "test@imperva.com","connections": []},"serverType": "AWS RDS MYSQL","gatewayId": "12345-abcde-12345-abcde"}}'`
+	dsf data_source delete "arn:aws:rds:us-east-2:123456789:db:your-host-here"
 
 ## Check out run locally not as pip package
 	git clone git@github.com:imperva/dsf-cli.git

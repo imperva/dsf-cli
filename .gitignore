@@ -10,3 +10,4 @@ scripts/*
 /test/
 /.swagger-codegen-ignore
 /data_source.json
+*/*/__pycache__/*.pyc

@@ -8,8 +8,8 @@
 `dsf data_source read`
 
 ### Retrieve a specific data_source by id:
-`dsf data_source read "<asset_id>"`<br /><br />
-`dsf data_source read "arn:aws:rds:us-east-2:123456789:db:your-host-here"`
+`dsf data_source read --id="<asset_id>"`<br /><br />
+`dsf data_source read --id="arn:aws:rds:us-east-2:123456789:db:your-host-here"`
 
 ### Create a data_source from input string:
 `dsf data_source create '<json-object>'`<br /><br />

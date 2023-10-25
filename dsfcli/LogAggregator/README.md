@@ -8,8 +8,8 @@
 `dsf log_aggregator read`
 
 ### Retrieve a specific log_aggregator by id:
-`dsf log_aggregator read "<asset_id>"`<br /><br />
-`dsf log_aggregator read "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2"`
+`dsf log_aggregator read --id="<asset_id>"`<br /><br />
+`dsf log_aggregator read --id="arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2"`
 
 ### Create a log_aggregator from input string:
 `dsf log_aggregator create '<json-object>'`<br /><br />

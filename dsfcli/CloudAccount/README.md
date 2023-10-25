@@ -8,8 +8,8 @@
 `dsf cloud_account read`
 
 ### Retrieve a specific cloud_accounts by id:
-`dsf cloud_account read "<asset_id>"`<br /><br />
-`dsf cloud_account read "arn:aws:rds:us-east-2:1234567890:db:your-db-name-here"`
+`dsf cloud_account read --id="<asset_id>"`<br /><br />
+`dsf cloud_account read --id="arn:aws:rds:us-east-2:1234567890:db:your-db-name-here"`
 
 ### Create a cloud_account from input string:
 `dsf cloud_account create "<asset_id>" '<json-object>'`<br /><br />
