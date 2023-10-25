@@ -16,6 +16,7 @@ Set [environment variables](https://en.wikipedia.org/wiki/Environment_variable) 
 
 ## Running the CLI
 	dsf -h
+	dsf gateway read
 	dsf data_source -h
 	dsf data_source read
 
