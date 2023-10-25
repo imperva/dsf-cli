@@ -5,12 +5,15 @@ The package provides a simple to use CLI that reflects industry standards (such 
 ## Installation
     pip3 install dsf-cli
 
+## Running the CLI
+	dsf -h
+	dsf data_source -h
+	dsf data_source read
+
 ## Check out run locally not as pip package
 	git clone git@github.com:imperva/dsf-cli.git
 	cd dsf-cli
 	python3 -m dsfcli -h
-
-## Running the CLI
 
 This CLI is a Python 3 application and has been tested with Python 3.6 -> 3.8
 ## Requirements:
@@ -40,6 +43,7 @@ This CLI is a Python 3 application and has been tested with Python 3.6 -> 3.8
 		cloud_account       Create and manage cloud accounts using the API.
 		log_aggregator      Create and manage log aggregators for your account using the API.
 		general_assets      Create and manage general assets using the API.
+		gateway				Read list of all gateways using the API.
 
     optional arguments:
       -h, --help            show this help message and exit
@@ -51,5 +55,6 @@ https://www.python.org/downloads/
 Examples by resource type:
 1. [Cloud Accounts](https://github.com/imperva/dsf-cli/blob/main/dsfcli/CloudAccount/)
 1. [Data Sources](https://github.com/imperva/dsf-cli/blob/main/dsfcli/DataSources/)
+1. [Gateways](https://github.com/imperva/dsf-cli/blob/main/dsfcli/Gateways/)
 1. [Log Aggregators](https://github.com/imperva/dsf-cli/blob/main/dsfcli/LogAggregator/)
 1. [Secret Managers](https://github.com/imperva/dsf-cli/blob/main/dsfcli/SecretManager/)
