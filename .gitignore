@@ -3,3 +3,10 @@ scripts/*
 */*/__pycache__*
 .DS_Store
 .vscode*
+/swagger/
+/.swagger-codegen/
+/dist/
+/dsf_cli.egg-info/
+/test/
+/.swagger-codegen-ignore
+/data_source.json
