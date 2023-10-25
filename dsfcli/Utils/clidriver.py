@@ -6,6 +6,7 @@ from ..SecretManager import secret_manager_parse
 from ..CloudAccount import cloud_account_parse
 from ..LogAggregator import log_aggregator_parse
 from ..GeneralAssets import general_assets_parse
+from ..Gateways import gateway_parse
 import dsfcli
 from swagger_client import Configuration
 from swagger_client.rest import ApiException
@@ -34,6 +35,7 @@ secret_manager_parser = secret_manager_parse(subparsers)
 cloud_account_parser = cloud_account_parse(subparsers)
 log_aggregator_parser = log_aggregator_parse(subparsers)
 general_assets_parser = general_assets_parse(subparsers)
+gateway_parser = gateway_parse(subparsers)
 
 
 def main(args=None):
