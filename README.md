@@ -33,7 +33,7 @@ This CLI is a Python 3 application and has been tested with Python 3.6 -> 3.8
     Enter: python -V or python3 -V
 
 ## Usage:
-    usage: dsfcli <resource> <command> [options]
+    usage: dsf <resource> <command> [options]
 
     CLI for data_source, account and security CRUD on DSF via API.
 
