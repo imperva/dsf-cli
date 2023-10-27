@@ -32,6 +32,7 @@ Set [environment variables](https://en.wikipedia.org/wiki/Environment_variable) 
 This CLI is a Python 3 application and has been tested with Python 3.6 -> 3.8
 ## Requirements:
     python 3.6 or higher
+    DSF HUB 4.12 or higher
 
 ## Confirm your version of python if installed:
     Open a terminal
