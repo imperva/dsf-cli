@@ -25,7 +25,7 @@ Example payloads for Secret Managers
 
 ### Update a secret_manager from local file by id:
 `dsf secret_manager update "<asset_id>" '<json-object>'`<br /><br />
-`dsf secret_manager update "$(cat < secret_manager_AWS.json)" "my.hashicorp.vault.server.com"`
+`dsf secret_manager update "my.hashicorp.vault.server.com" "$(cat < secret_manager_AWS.json)"`
 
 ### Delete a secret_manager by id:
 `dsf secret_manager delete "<asset_id>" '<json-object>'`<br /><br />

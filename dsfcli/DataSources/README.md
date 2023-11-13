@@ -25,7 +25,7 @@
 
 ### Update a data_source from local file by id:
 `dsf data_source update "<asset_id>" '<json-object>'`<br /><br />
-`dsf data_source update "$(cat < data_source_AWS_RDS_MYSQL.json)" "arn:aws:rds:us-east-2:123456789:db:your-host-here"`
+`dsf data_source update "arn:aws:rds:us-east-2:123456789:db:your-host-here" "$(cat < data_source_AWS_RDS_MYSQL.json)"`
 
 ### Delete a data_source by id:
 `dsf data_source delete "<asset_id>" '<json-object>'`<br /><br />

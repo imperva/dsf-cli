@@ -25,7 +25,7 @@
 
 ### Update a cloud_account from local file by id:
 `dsf cloud_account update "<asset_id>" '<json-object>'`<br /><br />
-`dsf cloud_account update "$(cat < cloud_account_AWS.json)" "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway"`
+`dsf cloud_account update "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway" "$(cat < cloud_account_AWS.json)"`
 
 ### Delete a cloud_account by id:
 `dsf cloud_account delete "<asset_id>" '<json-object>'`<br /><br />
