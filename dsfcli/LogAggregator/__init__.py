@@ -1,6 +1,6 @@
-import json
-from swagger_client import LogAggregatorsApi, ApiClient
-from swagger_client.rest import ApiException
+from .log_agg_crud import create, read, update, delete
+from .log_agg_scheduler_operations import enable_audit_collection_operation, disable_audit_collection_operation, \
+    test_connection_operation, sync_asset_operation
 
 
 def log_aggregator_parse(subparsers):
@@ -39,45 +39,26 @@ def log_aggregator_parse(subparsers):
     log_aggregator_delete_parser.add_argument('id', help='The log_aggregator ID.')
     log_aggregator_delete_parser.set_defaults(func=delete)
 
+    sync_asset_operation_parser = log_aggregator_subparsers.add_parser('sync', help='Sync a log aggregator between the DSF Hub and the Gateways.',
+                                                               usage=get_help("dsf log_aggregator sync"))
+    sync_asset_operation_parser.add_argument('id', help='The log_aggregator ID.')
+    sync_asset_operation_parser.set_defaults(func=sync_asset_operation)
 
-def create(args, configuration):
-    param = vars(args)
-    la_instance = LogAggregatorsApi(ApiClient(configuration))
-    try:
-        return la_instance.create_asset2(json.loads(param["json"]), async_req=param["sync_type"])
-    except ApiException as e:
-        return e
+    test_connection_operation_parser = log_aggregator_subparsers.add_parser('test', help='Test log aggregator connection.',
+                                                               usage=get_help("dsf log_aggregator test"))
+    test_connection_operation_parser.add_argument('purpose', help='The purpose for the test.')
+    test_connection_operation_parser.add_argument('id', help='The log_aggregator ID.')
+    test_connection_operation_parser.set_defaults(func=test_connection_operation)
 
+    sync_asset_operation_parser = log_aggregator_subparsers.add_parser('enable_audit', help='Enable log aggregator audit collection.',
+                                                               usage=get_help("dsf log_aggregator enable_audit"))
+    sync_asset_operation_parser.add_argument('id', help='The log_aggregator ID.')
+    sync_asset_operation_parser.set_defaults(func=enable_audit_collection_operation)
 
-def read(args, configuration):
-    param = vars(args)
-    la_instance = LogAggregatorsApi(ApiClient(configuration))
-    try:
-        if param["id"]:
-            return la_instance.get_asset2(param["id"])
-        else:
-            return la_instance.get_assets2()
-    except ApiException as e:
-        return e
-
-
-def update(args, configuration):
-    param = vars(args)
-    la_instance = LogAggregatorsApi(ApiClient(configuration))
-    try:
-        return la_instance.update_asset_full2(json.loads(param["json"]), param["id"], async_req=param["sync_type"])
-    except ApiException as e:
-        return e
-
-
-def delete(args, configuration):
-    param = vars(args)
-    la_instance = LogAggregatorsApi(ApiClient(configuration))
-    try:
-        if param["id"]:
-            return la_instance.delete_asset2(param["id"])
-    except ApiException as e:
-        return e
+    sync_asset_operation_parser = log_aggregator_subparsers.add_parser('disable_audit', help='Disable log aggregator audit collection.',
+                                                               usage=get_help("dsf log_aggregator disable_audit"))
+    sync_asset_operation_parser.add_argument('id', help='The log_aggregator ID.')
+    sync_asset_operation_parser.set_defaults(func=disable_audit_collection_operation)
 
 
 def get_help(match):

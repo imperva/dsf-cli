@@ -11,7 +11,7 @@ setuptools.setup(
             "dsf=dsfcli.__main__:main"
         ]
     },
-    install_requires=['urllib3'],
+    install_requires=['urllib3', 'certifi', 'six'],
     python_requires='>=3.6',
     url='https://github.com/imperva/dsf-cli',
     license='Imperva-Community Developer License',

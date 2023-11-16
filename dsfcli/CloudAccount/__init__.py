@@ -1,6 +1,6 @@
-import json
-from swagger_client import CloudAccountsApi, ApiClient
-from swagger_client.rest import ApiException
+from .cloud_crud import create, read, update, delete
+from .cloud_scheduler_operations import create_scheduled_discovery, read_scheduled_discovery, update_scheduled_discovery, \
+    trigger_discovery_operation, sync_asset_operation, test_connection_operation
 
 
 def cloud_account_parse(subparsers):
@@ -39,45 +39,39 @@ def cloud_account_parse(subparsers):
     cloud_account_delete_parser.add_argument('id', help='The cloud_account ID.')
     cloud_account_delete_parser.set_defaults(func=delete)
 
+    create_scheduled_discovery_parser = cloud_account_subparsers.add_parser('csd', help='Create scheduled discovery.',
+                                                                  usage=get_help("dsf cloud_account csd"))
+    create_scheduled_discovery_parser.add_argument('json', help='The JSON object to POST.')
+    create_scheduled_discovery_parser.add_argument('id', default='', help='Asset ID')
+    create_scheduled_discovery_parser.set_defaults(func=create_scheduled_discovery)
 
-def create(args, configuration):
-    param = vars(args)
-    ca_instance = CloudAccountsApi(ApiClient(configuration))
-    try:
-        return ca_instance.create_asset4(json.loads(param["json"]), async_req=param["sync_type"])
-    except ApiException as e:
-        return e
+    read_scheduled_discovery_parser = cloud_account_subparsers.add_parser('rsd', help='Get scheduled discovery.',
+                                                               usage=get_help("dsf cloud_account rsd"))
+    read_scheduled_discovery_parser.add_argument('id', help='The cloud_account ID.')
+    read_scheduled_discovery_parser.set_defaults(func=read_scheduled_discovery)
 
+    update_scheduled_discovery_parser = cloud_account_subparsers.add_parser('usd', help='Get scheduled discovery.',
+                                                               usage=get_help("dsf cloud_account usd"))
+    update_scheduled_discovery_parser.add_argument('json', help='The JSON object to POST.')
+    update_scheduled_discovery_parser.add_argument('id', help='The cloud_account ID.')
+    update_scheduled_discovery_parser.set_defaults(func=update_scheduled_discovery)
 
-def read(args, configuration):
-    param = vars(args)
-    ca_instance = CloudAccountsApi(ApiClient(configuration))
-    try:
-        if param["id"]:
-            return ca_instance.get_asset4(param["id"])
-        else:
-            return ca_instance.get_assets4()
-    except ApiException as e:
-        return e
+    trigger_discovery_operation_parser = cloud_account_subparsers.add_parser('trigger', help='Trigger discovery operation.',
+                                                               usage=get_help("dsf cloud_account trigger"))
+    trigger_discovery_operation_parser.add_argument('json', help='The JSON object to POST.')
+    trigger_discovery_operation_parser.add_argument('id', help='The cloud_account ID.')
+    trigger_discovery_operation_parser.set_defaults(func=trigger_discovery_operation)
 
+    sync_asset_operation_parser = cloud_account_subparsers.add_parser('sync', help='Sync a cloud account between the DSF Hub and the Gateways.',
+                                                               usage=get_help("dsf cloud_account sync"))
+    sync_asset_operation_parser.add_argument('id', help='The cloud_account ID.')
+    sync_asset_operation_parser.set_defaults(func=sync_asset_operation)
 
-def update(args, configuration):
-    param = vars(args)
-    ca_instance = CloudAccountsApi(ApiClient(configuration))
-    try:
-        return ca_instance.update_asset_full4(json.loads(param["json"]), param["id"], async_req=param["sync_type"])
-    except ApiException as e:
-        return e
-
-
-def delete(args, configuration):
-    param = vars(args)
-    ca_instance = CloudAccountsApi(ApiClient(configuration))
-    try:
-        if param["id"]:
-            return ca_instance.delete_asset4(param["id"])
-    except ApiException as e:
-        return e
+    test_connection_operation_parser = cloud_account_subparsers.add_parser('test', help='Test cloud account connection.',
+                                                               usage=get_help("dsf cloud_account test"))
+    test_connection_operation_parser.add_argument('purpose', help='The purpose for the test.')
+    test_connection_operation_parser.add_argument('id', help='The cloud_account ID.')
+    test_connection_operation_parser.set_defaults(func=test_connection_operation)
 
 
 def get_help(match):

@@ -1,6 +1,5 @@
-import json
-from swagger_client import GeneralAssetsApi, ApiClient, Configuration
-from swagger_client.rest import ApiException
+from .general_crud import create, read, update, delete
+from .general_operations import test_connection_operation, sync_asset_operation
 
 
 def general_assets_parse(subparsers):
@@ -39,45 +38,16 @@ def general_assets_parse(subparsers):
     general_assets_delete_parser.add_argument('id', help='The general_assets ID.')
     general_assets_delete_parser.set_defaults(func=delete)
 
+    sync_asset_operation_parser = general_assets_subparsers.add_parser('sync', help='Sync a general asset between the DSF Hub and the Gateways.',
+                                                               usage=get_help("dsf general_asset sync"))
+    sync_asset_operation_parser.add_argument('id', help='The general_assets ID.')
+    sync_asset_operation_parser.set_defaults(func=sync_asset_operation)
 
-def create(args, configuration):
-    param = vars(args)
-    ga_instance = GeneralAssetsApi(ApiClient(configuration))
-    try:
-        return ga_instance.create_asset1(json.loads(param["json"]), async_req=param["sync_type"])
-    except ApiException as e:
-        return e
-
-
-def read(args, configuration):
-    param = vars(args)
-    ga_instance = GeneralAssetsApi(ApiClient(configuration))
-    try:
-        if param["id"]:
-            return ga_instance.get_asset1(param["id"])
-        else:
-            return ga_instance.get_assets1()
-    except ApiException as e:
-        return e
-
-
-def update(args, configuration):
-    param = vars(args)
-    ga_instance = GeneralAssetsApi(ApiClient(configuration))
-    try:
-        return ga_instance.update_asset_full1(json.loads(param["json"]), param["id"], async_req=param["sync_type"])
-    except ApiException as e:
-        return e
-
-
-def delete(args, configuration):
-    param = vars(args)
-    ga_instance = GeneralAssetsApi(ApiClient(configuration))
-    try:
-        if param["id"]:
-            return ga_instance.delete_asset1(param["id"])
-    except ApiException as e:
-        return e
+    test_connection_operation_parser = general_assets_subparsers.add_parser('test', help='Test general asset connection.',
+                                                               usage=get_help("dsf general_asset test"))
+    test_connection_operation_parser.add_argument('purpose', help='The purpose for the test.')
+    test_connection_operation_parser.add_argument('id', help='The general_assets ID.')
+    test_connection_operation_parser.set_defaults(func=test_connection_operation)
 
 
 def get_help(match):

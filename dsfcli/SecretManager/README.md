@@ -9,8 +9,8 @@ Example payloads for Secret Managers
 `dsf secret_manager read`
 
 ### Retrieve a specific secret_manager by id:
-`dsf secret_manager read --id="<asset_id>"`<br /><br />
-`dsf secret_manager read --id="my.hashicorp.vault.server.com"`
+`dsf secret_manager read "<asset_id>"`<br /><br />
+`dsf secret_manager read "my.hashicorp.vault.server.com"`
 
 ### Create a secret_manager from input string:
 `dsf secret_manager create '<json-object>'`<br /><br />
@@ -25,7 +25,7 @@ Example payloads for Secret Managers
 
 ### Update a secret_manager from local file by id:
 `dsf secret_manager update "<asset_id>" '<json-object>'`<br /><br />
-`dsf secret_manager update "my.hashicorp.vault.server.com" "$(cat < secret_manager_AWS.json)"`
+`dsf secret_manager update "$(cat < secret_manager_AWS.json)" "my.hashicorp.vault.server.com"`
 
 ### Delete a secret_manager by id:
 `dsf secret_manager delete "<asset_id>" '<json-object>'`<br /><br />

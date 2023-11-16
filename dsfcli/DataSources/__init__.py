@@ -1,6 +1,6 @@
-import json
-from swagger_client import DataSourcesApi, ApiClient
-from swagger_client.rest import ApiException
+from .data_source_crud import create, read, update, delete
+from .data_source_scheduler_operations import test_connection_operation, sync_asset_operation, \
+    disable_audit_collection_operation, enable_audit_collection_operation
 
 
 def data_source_parse(subparsers):
@@ -39,45 +39,26 @@ def data_source_parse(subparsers):
     data_source_delete_parser.add_argument('id', help='The data_source ID.')
     data_source_delete_parser.set_defaults(func=delete)
 
+    sync_asset_operation_parser = data_source_subparsers.add_parser('sync', help='Sync a data source between the DSF Hub and the Gateways.',
+                                                               usage=get_help("dsf data_source sync"))
+    sync_asset_operation_parser.add_argument('id', help='The data_source ID.')
+    sync_asset_operation_parser.set_defaults(func=sync_asset_operation)
 
-def create(args, configuration):
-    param = vars(args)
-    ds_instance = DataSourcesApi(ApiClient(configuration))
-    try:
-        return ds_instance.create_asset3(json.loads(param["json"]), async_req=param["sync_type"])
-    except ApiException as e:
-        return e
+    test_connection_operation_parser = data_source_subparsers.add_parser('test', help='Test data source connection.',
+                                                               usage=get_help("dsf data_source test"))
+    test_connection_operation_parser.add_argument('purpose', help='The purpose for the test.')
+    test_connection_operation_parser.add_argument('id', help='The data_source ID.')
+    test_connection_operation_parser.set_defaults(func=test_connection_operation)
 
+    sync_asset_operation_parser = data_source_subparsers.add_parser('enable_audit', help='Enable data source audit collection.',
+                                                               usage=get_help("dsf data_source enable_audit"))
+    sync_asset_operation_parser.add_argument('id', help='The data_source ID.')
+    sync_asset_operation_parser.set_defaults(func=enable_audit_collection_operation)
 
-def read(args, configuration):
-    param = vars(args)
-    ds_instance = DataSourcesApi(ApiClient(configuration))
-    try:
-        if param["id"]:
-            return ds_instance.get_asset3(param["id"])
-        else:
-            return ds_instance.get_assets3()
-    except ApiException as e:
-        return e
-
-
-def update(args, configuration):
-    param = vars(args)
-    ds_instance = DataSourcesApi(ApiClient(configuration))
-    try:
-        return ds_instance.update_asset_full3(json.loads(param["json"]), param["id"], async_req=param["sync_type"])
-    except ApiException as e:
-        return e
-
-
-def delete(args, configuration):
-    param = vars(args)
-    ds_instance = DataSourcesApi(ApiClient(configuration))
-    try:
-        if param["id"]:
-            return ds_instance.delete_asset3(param["id"])
-    except ApiException as e:
-        return e
+    sync_asset_operation_parser = data_source_subparsers.add_parser('disable_audit', help='Disable data source audit collection.',
+                                                               usage=get_help("dsf data_source disable_audit"))
+    sync_asset_operation_parser.add_argument('id', help='The data_source ID.')
+    sync_asset_operation_parser.set_defaults(func=disable_audit_collection_operation)
 
 
 def get_help(match):

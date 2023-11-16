@@ -1,6 +1,5 @@
-import json
-from swagger_client import SecretManagersApi, ApiClient
-from swagger_client.rest import ApiException
+from .secret_manager_crud import create, read, update, delete
+from .secret_manager_operations import test_connection_operation, sync_asset_operation
 
 
 def secret_manager_parse(subparsers):
@@ -39,45 +38,16 @@ def secret_manager_parse(subparsers):
     secret_manager_delete_parser.add_argument('id', help='The secret_manager ID.')
     secret_manager_delete_parser.set_defaults(func=delete)
 
+    sync_asset_operation_parser = secret_manager_subparsers.add_parser('sync', help='Sync a general asset between the DSF Hub and the Gateways.',
+                                                               usage=get_help("dsf secret_manager sync"))
+    sync_asset_operation_parser.add_argument('id', help='The secret_manager ID.')
+    sync_asset_operation_parser.set_defaults(func=sync_asset_operation)
 
-def create(args, configuration):
-    param = vars(args)
-    sm_instance = SecretManagersApi(ApiClient(configuration))
-    try:
-        return sm_instance.create_asset(json.loads(param["json"]), async_req=param["sync_type"])
-    except ApiException as e:
-        return e
-
-
-def read(args, configuration):
-    param = vars(args)
-    sm_instance = SecretManagersApi(ApiClient(configuration))
-    try:
-        if param["id"]:
-            return sm_instance.get_asset(param["id"])
-        else:
-            return sm_instance.get_assets()
-    except ApiException as e:
-        return e
-
-
-def update(args, configuration):
-    param = vars(args)
-    sm_instance = SecretManagersApi(ApiClient(configuration))
-    try:
-        return sm_instance.update_asset_full(json.loads(param["json"]), param["id"], async_req=param["sync_type"])
-    except ApiException as e:
-        return e
-
-
-def delete(args, configuration):
-    param = vars(args)
-    sm_instance = SecretManagersApi(ApiClient(configuration))
-    try:
-        if param["id"]:
-            return sm_instance.delete_asset(param["id"])
-    except ApiException as e:
-        return e
+    test_connection_operation_parser = secret_manager_subparsers.add_parser('test', help='Test general asset connection.',
+                                                               usage=get_help("dsf secret_manager test"))
+    test_connection_operation_parser.add_argument('purpose', help='The purpose for the test.')
+    test_connection_operation_parser.add_argument('id', help='The secret_manager ID.')
+    test_connection_operation_parser.set_defaults(func=test_connection_operation)
 
 
 def get_help(match):
