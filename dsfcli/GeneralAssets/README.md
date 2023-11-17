@@ -29,3 +29,11 @@
 ## Delete a general_asset by id:
 `dsf general_asset delete "<asset_id>" '<json-object>'`<br /><br />
 `python3 -m dsf general_asset delete "arn:aws:rds:us-east-2:123456789:db:your-host-here"`
+
+### Sync a general_asset by id:
+`dsf general_asset sync "<asset_id>"`<br /><br />
+`dsf general_asset sync "arn:aws:rds:us-east-2:123456789:db:your-host-here"`
+
+### Test a general_asset connection by id:
+`dsf general_asset test "<asset_id>" "<purpose>"`<br /><br />
+`dsf general_asset test "arn:aws:rds:us-east-2:123456789:db:your-host-here" "default"`

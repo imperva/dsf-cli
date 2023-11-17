@@ -9,29 +9,53 @@
 
 ### Retrieve a specific cloud_accounts by id:
 `dsf cloud_account read "<asset_id>"`<br /><br />
-`dsf cloud_account read "arn:aws:rds:us-east-2:1234567890:db:your-db-name-here"`
+`dsf cloud_account read "arn:aws:iam::1234567890:user/your-user"`
 
 ### Create a cloud_account from input string:
-`dsf cloud_account create "<asset_id>" '<json-object>'`<br /><br />
-`dsf cloud_account create '{"data": {"assetData": {"asset_display_name": "your-aws-ec2-iam-role-cloud-asset","arn": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway","asset_id": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway","admin_email": "test@imperva.com","connections": [{"reason": "default","connectionData": {"auth_mechanism": "default","region": "us-east-1",}}]},"serverType": "AWS","gatewayId": "12345-abcde-12345-abcde-12345"}}'`
+`dsf cloud_account create '<json-object>'`<br /><br />
+`dsf cloud_account create '{"data": {"assetData": {"asset_display_name": "your-aws-ec2-iam-role-cloud-asset","arn": "arn:aws:iam::1234567890:user/your-user","asset_id": "arn:aws:iam::1234567890:user/your-user","admin_email": "test@imperva.com","connections": [{"reason": "default","connectionData": {"auth_mechanism": "default","region": "us-east-1",}}]},"serverType": "AWS","gatewayId": "12345-abcde-12345-abcde-12345"}}'`
 
 ### Create a cloud_account from local file:
-`dsf cloud_account create "<asset_id>" '<json-object>'`<br /><br />
+`dsf cloud_account create '<json-object>'`<br /><br />
 `dsf cloud_account create "$(cat < cloud_account_AWS.json)"`
 
 ### Update a data_source from input string by id:
 `dsf cloud_account update "<asset_id>" '<json-object>'`<br /><br />
-`dsf cloud_account update "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway" '{"data": {"assetData": {"asset_display_name": "your-aws-ec2-iam-role-cloud-asset","arn": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway","asset_id": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway","admin_email": "test@imperva.com","connections": [{"reason": "default","connectionData": {"auth_mechanism": "default","region": "us-east-1",}}]},"serverType": "AWS","gatewayId": "12345-abcde-12345-abcde-12345"}}'`
+`dsf cloud_account update "arn:aws:iam::1234567890:user/your-user" '{"data": {"assetData": {"asset_display_name": "your-aws-ec2-iam-role-cloud-asset","arn": "arn:aws:iam::1234567890:user/your-user","asset_id": "arn:aws:iam::1234567890:user/your-user","admin_email": "test@imperva.com","connections": [{"reason": "default","connectionData": {"auth_mechanism": "default","region": "us-east-1",}}]},"serverType": "AWS","gatewayId": "12345-abcde-12345-abcde-12345"}}'`
 
 ### Update a cloud_account from local file by id:
 `dsf cloud_account update "<asset_id>" '<json-object>'`<br /><br />
-`dsf cloud_account update "$(cat < cloud_account_AWS.json)" "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway"`
+`dsf cloud_account update "$(cat < cloud_account_AWS.json)" "arn:aws:iam::1234567890:user/your-user"`
 
 ### Delete a cloud_account by id:
 `dsf cloud_account delete "<asset_id>" '<json-object>'`<br /><br />
-`dsf cloud_account delete "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway"`
+`dsf cloud_account delete "arn:aws:iam::1234567890:user/your-user"`
 
-#### Config Options ####
+### Create scheduled discovery for cloud_account by id:
+`dsf cloud_account csd "<asset_id>" '<json-object>'`<br /><br />
+`dsf cloud_account csd "arn:aws:iam::1234567890:user/your-user" '{"data": {"cron": "0 0 0 * * ? *","itemId": "arn:aws:iam::123456789","paused": false}}'`
+
+### Read scheduled discovery for cloud_account by id:
+`dsf cloud_account rds "<asset_id>"`<br /><br />
+`dsf cloud_account rds "arn:aws:iam::1234567890:user/your-user"`
+
+### Update scheduled discovery for cloud_account by id:
+`dsf cloud_account usd "<asset_id>" '<json-object>'`<br /><br />
+`dsf cloud_account usd "arn:aws:iam::1234567890:user/your-user" '{"data": {"cron": "0 0 0 * * ? *","itemId": "arn:aws:iam::123456789","paused": false}}'`
+
+### Trigger discovery operation for cloud_account by id:
+`dsf cloud_account trigger "<asset_id>" '<json-object>'`<br /><br />
+`dsf cloud_account trigger "arn:aws:iam::1234567890:user/your-user" '{"data": {"discoveryType": "AWS_RDS","subscriptionId": "string"}}'`
+
+### Sync a cloud_account by id:
+`dsf cloud_account sync "<asset_id>"`<br /><br />
+`dsf cloud_account sync "arn:aws:iam::1234567890:user/your-user"`
+
+### Test connectivity for a cloud_account by id:
+`dsf cloud_account test "<asset_id>"`<br /><br />
+`dsf cloud_account test "arn:aws:iam::1234567890:user/your-user"`
+
+#### Config Options for Create/Read/Update/Delete of cloud_account resource ####
 
 `data.admin_email` [string] - _(required)_ The email address to notify about this asset Default Value: null
 

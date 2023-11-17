@@ -46,8 +46,8 @@ def log_aggregator_parse(subparsers):
 
     test_connection_operation_parser = log_aggregator_subparsers.add_parser('test', help='Test log aggregator connection.',
                                                                usage=get_help("dsf log_aggregator test"))
-    test_connection_operation_parser.add_argument('purpose', help='The purpose for the test.')
     test_connection_operation_parser.add_argument('id', help='The log_aggregator ID.')
+    test_connection_operation_parser.add_argument('purpose', help='The purpose for the test.')
     test_connection_operation_parser.set_defaults(func=test_connection_operation)
 
     sync_asset_operation_parser = log_aggregator_subparsers.add_parser('enable_audit', help='Enable log aggregator audit collection.',

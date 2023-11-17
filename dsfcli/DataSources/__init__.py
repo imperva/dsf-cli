@@ -46,8 +46,8 @@ def data_source_parse(subparsers):
 
     test_connection_operation_parser = data_source_subparsers.add_parser('test', help='Test data source connection.',
                                                                usage=get_help("dsf data_source test"))
-    test_connection_operation_parser.add_argument('purpose', help='The purpose for the test.')
     test_connection_operation_parser.add_argument('id', help='The data_source ID.')
+    test_connection_operation_parser.add_argument('purpose', help='The purpose for the test.')
     test_connection_operation_parser.set_defaults(func=test_connection_operation)
 
     sync_asset_operation_parser = data_source_subparsers.add_parser('enable_audit', help='Enable data source audit collection.',

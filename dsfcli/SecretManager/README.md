@@ -31,6 +31,15 @@ Example payloads for Secret Managers
 `dsf secret_manager delete "<asset_id>" '<json-object>'`<br /><br />
 `dsf secret_manager delete "my.hashicorp.vault.server.com"`
 
+### Sync a secret_manager by id:
+`dsf secret_manager sync "<asset_id>"`<br /><br />
+`dsf secret_manager sync "my.hashicorp.vault.server.com"`
+
+### Test a secret_manager connection by id:
+`dsf secret_manager test "<asset_id>" "<purpose>"`<br /><br />
+`dsf secret_manager test "my.hashicorp.vault.server.com" "default"`
+
+
 #### Config Options ####
 
 `data.admin_email` [string] - _(required)_ The email address to notify about this asset Default Value: null

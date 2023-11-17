@@ -28,10 +28,26 @@
 `dsf data_source update "$(cat < data_source_AWS_RDS_MYSQL.json)" "arn:aws:rds:us-east-2:123456789:db:your-host-here"`
 
 ### Delete a data_source by id:
-`dsf data_source delete "<asset_id>" '<json-object>'`<br /><br />
+`dsf data_source delete "<asset_id>"`<br /><br />
 `dsf data_source delete "arn:aws:rds:us-east-2:123456789:db:your-host-here"`
 
-#### Config Options ####
+### Sync a data_source by id:
+`dsf data_source sync "<asset_id>"`<br /><br />
+`dsf data_source sync "arn:aws:rds:us-east-2:123456789:db:your-host-here"`
+
+### Test a data_source connection by id:
+`dsf data_source test "<asset_id>" "<purpose>"`<br /><br />
+`dsf data_source test "arn:aws:rds:us-east-2:123456789:db:your-host-here" "default"`
+
+### Enable audit for data_source by id:
+`dsf data_source enable_audit "<asset_id>"`<br /><br />
+`dsf data_source enable_audit "arn:aws:rds:us-east-2:123456789:db:your-host-here"`
+
+### Disable audit for data_source by id:
+`dsf data_source disable_audit "<asset_id>"`<br /><br />
+`dsf data_source disable_audit "arn:aws:rds:us-east-2:123456789:db:your-host-here"`
+
+#### Config Options for Create/Read/Update/Delete of data_source resource ####
 
 `data.admin_email` [string] - _(required)_ The email address to notify about this asset Default Value: null
 

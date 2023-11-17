@@ -9,11 +9,11 @@
 
 ### Retrieve a specific log_aggregator by id:
 `dsf log_aggregator read "<asset_id>"`<br /><br />
-`dsf log_aggregator read "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2"`
+`dsf log_aggregator read "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway"`
 
 ### Create a log_aggregator from input string:
 `dsf log_aggregator create '<json-object>'`<br /><br />
-`dsf log_aggregator create '{"data": {"assetData": {"asset_display_name": "some-log-group-asset","arn": "arn:aws:logs:us-east-1:1234567890:log-group:/aws/rds/instance/my-database/audit:*","admin_email": "test@imperva.com","parent_asset_id": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2","connections": [{"reason": "default","connectionData": {"auth_mechanism": "default","region": "us-east-1"}}]},"serverType": "AWS LOG GROUP","parentAssetId": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2","gatewayId": "60343559-211f-4d8a-9477-8042720bae58"}}'`
+`dsf log_aggregator create '{"data": {"assetData": {"asset_display_name": "some-log-group-asset","arn": "arn:aws:logs:us-east-1:1234567890:log-group:/aws/rds/instance/my-database/audit:*","admin_email": "test@imperva.com","parent_asset_id": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway","connections": [{"reason": "default","connectionData": {"auth_mechanism": "default","region": "us-east-1"}}]},"serverType": "AWS LOG GROUP","parentAssetId": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway","gatewayId": "60343559-211f-4d8a-9477-8042720bae58"}}'`
 
 ### Create a log_aggregator from local file:
 `dsf log_aggregator create '<json-object>'`<br /><br />
@@ -21,17 +21,33 @@
 
 ### Update a data_source from input string by id:
 `dsf log_aggregator update "<asset_id>" '<json-object>'`<br /><br />
-`dsf log_aggregator update "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2" '{"data": {"assetData": {"asset_display_name": "some-log-group-asset","arn": "arn:aws:logs:us-east-1:1234567890:log-group:/aws/rds/instance/my-database/audit:*","admin_email": "test@imperva.com","parent_asset_id": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2","connections": [{"reason": "default","connectionData": {"auth_mechanism": "default","region": "us-east-1"}}]},"serverType": "AWS LOG GROUP","parentAssetId": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2","gatewayId": "60343559-211f-4d8a-9477-8042720bae58"}}'`
+`dsf log_aggregator update "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway" '{"data": {"assetData": {"asset_display_name": "some-log-group-asset","arn": "arn:aws:logs:us-east-1:1234567890:log-group:/aws/rds/instance/my-database/audit:*","admin_email": "test@imperva.com","parent_asset_id": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway","connections": [{"reason": "default","connectionData": {"auth_mechanism": "default","region": "us-east-1"}}]},"serverType": "AWS LOG GROUP","parentAssetId": "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway","gatewayId": "60343559-211f-4d8a-9477-8042720bae58"}}'`
 
 ### Update a log_aggregator from local file by id:
 `dsf log_aggregator update "<asset_id>" '<json-object>'`<br /><br />
-`dsf log_aggregator update "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2" "$(cat < log_aggregator_AWS.json)" "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2"`
+`dsf log_aggregator update "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway" "$(cat < log_aggregator_AWS.json)" "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway"`
 
 ### Delete a log_aggregator by id:
 `dsf log_aggregator delete "<asset_id>"`<br /><br />
-`dsf log_aggregator delete "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway2"`
+`dsf log_aggregator delete "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway"`
 
-#### Config Options ####
+### Sync a log_aggregator by id:
+`dsf log_aggregator sync "<asset_id>"`<br /><br />
+`dsf log_aggregator sync "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway"`
+
+### Test a log_aggregator connection by id:
+`dsf log_aggregator test "<asset_id>" "<purpose>" `<br /><br />
+`dsf log_aggregator test "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway" "default"`
+
+### Enable audit for log_aggregator by id:
+`dsf log_aggregator enable_audit "<asset_id>"`<br /><br />
+`dsf log_aggregator enable_audit "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway"`
+
+### Disable audit for log_aggregator by id:
+`dsf log_aggregator disable_audit "<asset_id>"`<br /><br />
+`dsf log_aggregator disable_audit "arn:aws:iam::658749227924:role/some-role-for-sonar-gateway"`
+
+#### Config Options for Create/Read/Update/Delete of log_aggregator resource ####
 
 `data.admin_email` [string] - _(required)_ The email address to notify about this asset Default Value: null
 
